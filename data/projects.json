@@ -1,0 +1,37 @@
+[
+  {
+    "id": "project-1",
+    "title": "Aura AI Workspace",
+    "description": "An intelligent, collaborative workspace platform with real-time markdown editing, AI copilot assistance, and instant cloud sync.",
+    "tags": ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Prisma"],
+    "link": "https://aura-workspace-demo.vercel.app",
+    "githubUrl": "https://github.com/arushkumarsingh/aura-workspace",
+    "featured": true
+  },
+  {
+    "id": "project-2",
+    "title": "Starlight UI Design System",
+    "description": "A high-performance accessible React component library with built-in dark mode, zero-runtime CSS tokens, and Tailwind integration.",
+    "tags": ["React", "TypeScript", "Tailwind CSS", "Storybook"],
+    "link": "https://starlight-ui.vercel.app",
+    "githubUrl": "https://github.com/arushkumarsingh/starlight-ui",
+    "featured": true
+  },
+  {
+    "id": "project-3",
+    "title": "DevPulse Analytics Dashboard",
+    "description": "Real-time metrics aggregator for engineering teams, tracking GitHub pull request velocity, CI pipeline health, and code review turnarounds.",
+    "tags": ["Next.js", "Node.js", "PostgreSQL", "Tailwind CSS", "Recharts"],
+    "link": "https://devpulse-demo.vercel.app",
+    "githubUrl": "https://github.com/arushkumarsingh/devpulse-analytics",
+    "featured": true
+  },
+  {
+    "id": "project-4",
+    "title": "FastCache KV",
+    "description": "Sub-millisecond lightweight in-memory key-value store built in TypeScript with zero third-party dependencies.",
+    "tags": ["TypeScript", "Node.js", "Jest", "Algorithms"],
+    "githubUrl": "https://github.com/arushkumarsingh/fastcache-kv",
+    "featured": false
+  }
+]

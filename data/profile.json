@@ -1,0 +1,42 @@
+{
+  "name": "Arush Kumar Singh",
+  "title": "Full-Stack Software Engineer & Product Builder",
+  "tagline": "Crafting clean, performance-first web applications and elegant user experiences.",
+  "bio": "I'm a software engineer passionate about building modern web applications, scalable design systems, and developer tools. With expertise across React, Next.js, Node.js, and Cloud Infrastructure, I turn complex problems into simple, minimalist software.",
+  "location": "India",
+  "email": "arush@example.com",
+  "avatar": "/avatar.jpg",
+  "resumeUrl": "/resume.pdf",
+  "socials": {
+    "github": "https://github.com/arushkumarsingh",
+    "linkedin": "https://linkedin.com/in/arushkumarsingh",
+    "twitter": "https://twitter.com/arushkumarsingh",
+    "email": "mailto:arush@example.com"
+  },
+  "skills": {
+    "Frontend": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux",
+      "HTML/CSS"
+    ],
+    "Backend & DB": [
+      "Node.js",
+      "Express",
+      "Python",
+      "PostgreSQL",
+      "MongoDB",
+      "GraphQL"
+    ],
+    "DevOps & Tools": [
+      "Git",
+      "Docker",
+      "Vercel",
+      "AWS",
+      "CI/CD",
+      "Jest/Cypress"
+    ]
+  }
+}
