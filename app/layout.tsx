@@ -17,20 +17,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Arush Kumar Singh — Software Engineer & Product Builder",
+    default: "Arush Kumar Singh — Aerospace Engineer & AI Infrastructure",
     template: "%s | Arush Kumar Singh",
   },
   description:
-    "Personal portfolio of Arush Kumar Singh, a full-stack software engineer building high-performance web applications and minimalist digital experiences.",
+    "Aerospace engineer building at the edge of hardware and AI. IIT Kanpur graduate working across AI infrastructure, real-time telemetry, aerospace, and physical systems.",
   keywords: [
     "Arush Kumar Singh",
-    "Software Engineer",
-    "Full-Stack Developer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Portfolio",
+    "Aerospace Engineer",
+    "IIT Kanpur",
+    "AI Infrastructure",
+    "Hardware Telemetry",
+    "Real-Time AI",
+    "XpectraFlow",
+    "ButterCut.ai",
   ],
   authors: [{ name: "Arush Kumar Singh" }],
   creator: "Arush Kumar Singh",
@@ -38,25 +38,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://arushkumarsingh.com",
-    title: "Arush Kumar Singh — Software Engineer & Product Builder",
+    title: "Arush Kumar Singh — Aerospace Engineer & AI Infrastructure",
     description:
-      "Crafting clean, performance-first web applications and elegant user experiences.",
-    siteName: "Arush Kumar Singh Portfolio",
+      "Aerospace engineer building at the edge of hardware and AI. IIT Kanpur graduate working across AI infrastructure, real-time telemetry, aerospace, and physical systems.",
+    siteName: "Arush Kumar Singh",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Arush Kumar Singh Portfolio",
+        alt: "Arush Kumar Singh",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arush Kumar Singh — Software Engineer",
-    description:
-      "Crafting clean, performance-first web applications and elegant user experiences.",
-    creator: "@arushkumarsingh",
+    title: "Arush Kumar Singh — Aerospace Engineer",
+    description: "Aerospace engineer building at the edge of hardware and AI.",
+    creator: "@Arushkumarsing3",
   },
   icons: {
     icon: "/favicon.ico",

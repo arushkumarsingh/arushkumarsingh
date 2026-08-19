@@ -1,39 +1,41 @@
 [
   {
-    "id": "exp-1",
-    "role": "Senior Frontend Engineer",
-    "company": "TechCorp Innovations",
-    "period": "2024 — Present",
-    "description": "Led the development of Next.js web applications serving 500k+ active users. Architected modular UI component design system and reduced core web vitals load times by 40%.",
+    "id": "exp-xpectraflow",
+    "role": "Founder / CTO",
+    "company": "XpectraFlow",
+    "period": "[DATES TBD]",
+    "description": "Built telemetry and data infrastructure for aerospace and other mission-critical hardware. Worked across product, software architecture, real-time data ingestion, signal processing, visualization, and customer development.",
     "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "GraphQL"
-    ]
-  },
-  {
-    "id": "exp-2",
-    "role": "Full-Stack Software Engineer",
-    "company": "CloudScale Systems",
-    "period": "2022 — 2024",
-    "description": "Engineered microservice REST/gRPC APIs in Node.js and built real-time analytics dashboards. Implemented CI/CD pipelines and automated automated integration testing.",
-    "technologies": [
-      "React",
-      "Node.js",
-      "Express",
+      "Python",
+      "FastAPI",
       "PostgreSQL",
-      "Docker",
-      "AWS"
+      "TimescaleDB",
+      "Redis",
+      "C++"
     ]
   },
   {
-    "id": "exp-3",
-    "role": "Software Engineer Intern",
-    "company": "Nexus Labs",
-    "period": "2021 — 2022",
-    "description": "Developed web application features, modernized legacy codebase to TypeScript, and authored developer API documentation.",
-    "technologies": ["JavaScript", "TypeScript", "React", "CSS3", "Git"]
+    "id": "exp-buttercut",
+    "role": "CTO / Co-founder",
+    "company": "ButterCut.ai",
+    "period": "[DATES TBD]",
+    "description": "Built an AI video editing product for vernacular creators, working across engineering, product, and early-stage company building.",
+    "technologies": ["AI", "Video", "Python", "JavaScript", "Product"]
+  },
+  {
+    "id": "exp-galaxeye",
+    "role": "[TITLE TBD]",
+    "company": "GalaxEye Space",
+    "period": "[DATES TBD]",
+    "description": "Worked on aerospace/space technology before building XpectraFlow.",
+    "technologies": ["Aerospace", "Space Tech"]
+  },
+  {
+    "id": "exp-nabhdrishti",
+    "role": "[TITLE TBD]",
+    "company": "NabhDrishti Aerospace",
+    "period": "[DATES TBD]",
+    "description": "Worked on aerospace technology and engineering.",
+    "technologies": ["Aerospace Engineering"]
   }
 ]

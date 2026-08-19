@@ -1,3 +1,4 @@
+import Image from "next/image";
 import profileData from "@/data/profile.json";
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
@@ -12,56 +13,89 @@ import {
   Code2,
   Server,
   Wrench,
+  Cpu,
+  BarChart3,
+  Sparkles,
   Mail,
   Send,
 } from "lucide-react";
 
 export default function Home() {
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Languages":
+        return <Code2 className="h-4 w-4 text-indigo-500" />;
+      case "Backend":
+        return <Server className="h-4 w-4 text-indigo-500" />;
+      case "Frontend":
+        return <Code2 className="h-4 w-4 text-indigo-500" />;
+      case "Infrastructure":
+        return <Wrench className="h-4 w-4 text-indigo-500" />;
+      case "Data / Observability":
+        return <BarChart3 className="h-4 w-4 text-indigo-500" />;
+      case "AI":
+        return <Sparkles className="h-4 w-4 text-indigo-500" />;
+      default:
+        return <Cpu className="h-4 w-4 text-indigo-500" />;
+    }
+  };
+
   return (
     <div className="space-y-4">
       {/* 5.1 Hero Section */}
       <Section id="hero" className="pt-12 pb-8 sm:pt-20 sm:pb-12">
-        <div className="space-y-6">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-indigo-500"></span>
-            </span>
-            Available for new opportunities
-          </div>
+        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div className="flex-1 space-y-6">
+            {/* Name & Tagline */}
+            <div className="space-y-3">
+              <h1 className="text-h1 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+                {profileData.name}
+              </h1>
+              <p className="text-h3 font-medium text-indigo-600 dark:text-indigo-400">
+                {profileData.tagline}
+              </p>
+            </div>
 
-          {/* Headline & Tagline */}
-          <div className="space-y-3">
-            <h1 className="text-h1 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-              Hi, I&apos;m {profileData.name}
-            </h1>
-            <p className="text-h3 font-medium text-indigo-600 dark:text-indigo-400">
-              {profileData.title}
+            {/* Intro */}
+            <p className="text-body max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-300">
+              {profileData.intro}
             </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Button href="#projects" variant="primary" size="md">
+                View Projects
+                <ArrowDown className="ml-1 h-4 w-4" />
+              </Button>
+
+              <Button
+                href={profileData.resumeUrl}
+                variant="outline"
+                size="md"
+                external
+              >
+                <FileText className="mr-1 h-4 w-4" />
+                Resume / Document
+              </Button>
+            </div>
           </div>
 
-          {/* Short Intro */}
-          <p className="text-body max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-300">
-            {profileData.tagline} {profileData.bio}
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
-            <Button href="#projects" variant="primary" size="md">
-              View my work
-              <ArrowDown className="ml-1 h-4 w-4" />
-            </Button>
-
-            <Button
-              href={profileData.resumeUrl}
-              variant="outline"
-              size="md"
-              external
-            >
-              <FileText className="mr-1 h-4 w-4" />
-              Download Resume
-            </Button>
+          {/* Profile Photo Placeholder Slot (Next.js Image) */}
+          {/* Note: Swap src below with real profile picture URL when available */}
+          <div className="group relative shrink-0">
+            <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl border-2 border-neutral-200 bg-neutral-100 shadow-xs sm:h-32 sm:w-32 dark:border-neutral-800 dark:bg-neutral-900">
+              {profileData.avatar ? (
+                <Image
+                  src={profileData.avatar}
+                  alt={profileData.name}
+                  width={128}
+                  height={128}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <span className="text-2xl font-bold text-neutral-400">AKS</span>
+              )}
+            </div>
           </div>
         </div>
       </Section>
@@ -70,83 +104,41 @@ export default function Home() {
       <Section
         id="about"
         title="About Me"
-        subtitle="Background & technical skills overview"
+        subtitle="Background & engineering focus"
       >
         <div className="space-y-8">
           <div className="prose dark:prose-invert text-body space-y-4 leading-relaxed text-neutral-600 dark:text-neutral-300">
-            <p>
-              I build web applications with an emphasis on code quality, user
-              experience, and minimalist design systems. With a strong
-              background in full-stack JavaScript and TypeScript ecosystems, I
-              bridge the gap between engineering execution and product design.
-            </p>
-            <p>
-              Whether engineering scalable serverless backend architectures or
-              crafting sleek responsive interfaces, I focus on delivering
-              simple, robust software solutions.
-            </p>
+            <p>{profileData.bio}</p>
           </div>
 
-          {/* Categorized Skills */}
+          {/* Categorized Skills Grid */}
           <div className="space-y-6 border-t border-neutral-200/60 pt-4 dark:border-neutral-800/60">
             <h3 className="text-h3 text-neutral-900 dark:text-neutral-100">
-              Technical Skills
+              Skills & Technologies
             </h3>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              {/* Frontend */}
-              <div className="space-y-3 rounded-xl border border-neutral-200/80 bg-neutral-50/50 p-4 dark:border-neutral-800/80 dark:bg-neutral-900/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                  <Code2 className="h-4 w-4" />
-                  Frontend
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+              {Object.entries(profileData.skills).map(([category, items]) => (
+                <div
+                  key={category}
+                  className="space-y-3 rounded-xl border border-neutral-200/80 bg-neutral-50/50 p-4 dark:border-neutral-800/80 dark:bg-neutral-900/50"
+                >
+                  <div className="flex items-center gap-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+                    {getCategoryIcon(category)}
+                    {category}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-md bg-neutral-200/60 px-2.5 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800/80 dark:text-neutral-200"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {profileData.skills.Frontend.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-md bg-neutral-200/60 px-2.5 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800/80 dark:text-neutral-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Backend & DB */}
-              <div className="space-y-3 rounded-xl border border-neutral-200/80 bg-neutral-50/50 p-4 dark:border-neutral-800/80 dark:bg-neutral-900/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                  <Server className="h-4 w-4" />
-                  Backend & DB
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {profileData.skills["Backend & DB"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-md bg-neutral-200/60 px-2.5 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800/80 dark:text-neutral-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* DevOps & Tools */}
-              <div className="space-y-3 rounded-xl border border-neutral-200/80 bg-neutral-50/50 p-4 dark:border-neutral-800/80 dark:bg-neutral-900/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                  <Wrench className="h-4 w-4" />
-                  DevOps & Tools
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {profileData.skills["DevOps & Tools"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-md bg-neutral-200/60 px-2.5 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800/80 dark:text-neutral-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -155,8 +147,8 @@ export default function Home() {
       {/* 5.3 Projects Section */}
       <Section
         id="projects"
-        title="Featured Work"
-        subtitle="Selected open-source projects, design systems, and web applications"
+        title="Projects & Research"
+        subtitle="Selected work across telemetry infrastructure, AI products, and aerospace research"
       >
         <div className="grid grid-cols-1 gap-6">
           {projectsData.map((project) => (
@@ -167,13 +159,13 @@ export default function Home() {
               tags={project.tags}
               footer={
                 <div className="flex items-center gap-4 text-xs font-medium">
-                  {project.link && (
+                  {project.link && project.link !== "#" && (
                     <CustomLink href={project.link} external showIcon>
-                      Live Demo
+                      View Product
                     </CustomLink>
                   )}
 
-                  {project.githubUrl && (
+                  {project.githubUrl && project.githubUrl !== "#" ? (
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -181,8 +173,13 @@ export default function Home() {
                       className="inline-flex items-center gap-1.5 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
                     >
                       <GithubIcon className="h-3.5 w-3.5" />
-                      GitHub Repo
+                      Repository
                     </a>
+                  ) : (
+                    /* Dummy placeholder link comment */
+                    <span className="text-xs text-neutral-400 italic dark:text-neutral-500">
+                      {/* GitHub / Demo link [TBD] */}
+                    </span>
                   )}
                 </div>
               }
@@ -194,8 +191,8 @@ export default function Home() {
       {/* 5.4 Experience Section */}
       <Section
         id="experience"
-        title="Work Experience"
-        subtitle="Career journey and key achievements"
+        title="Experience & Roles"
+        subtitle="Career trajectory across aerospace, AI, and engineering"
       >
         <div className="relative space-y-10 border-l-2 border-neutral-200 pl-6 dark:border-neutral-800">
           {experienceData.map((exp) => (
@@ -211,7 +208,9 @@ export default function Home() {
                       @ {exp.company}
                     </span>
                   </h3>
-                  <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
+
+                  {/* Dates badge with TBD support */}
+                  <span className="rounded bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
                     {exp.period}
                   </span>
                 </div>
@@ -240,15 +239,15 @@ export default function Home() {
       <Section
         id="contact"
         title="Get in Touch"
-        subtitle="Have a question or interested in working together? Drop me a message."
+        subtitle="Feel free to reach out for inquiries, research discussions, or technical projects."
       >
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {/* Contact Details & Social Links */}
+          {/* Contact Information & Socials */}
           <div className="space-y-6">
             <p className="text-body leading-relaxed text-neutral-600 dark:text-neutral-300">
-              I&apos;m currently open to new software engineering opportunities,
-              consulting projects, and tech collaborations. Feel free to reach
-              out via email or connect on social platforms.
+              I am open to discussions around AI infrastructure, real-time
+              telemetry, aerospace systems, and physical computing. Connect via
+              email or social channels below.
             </p>
 
             <div className="space-y-3">
@@ -286,7 +285,7 @@ export default function Home() {
                 href={profileData.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="X / Twitter"
                 className="rounded-lg border border-neutral-200 bg-neutral-50 p-2.5 text-neutral-700 transition-colors hover:border-neutral-300 hover:text-indigo-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-700 dark:hover:text-indigo-400"
               >
                 <TwitterIcon className="h-5 w-5" />

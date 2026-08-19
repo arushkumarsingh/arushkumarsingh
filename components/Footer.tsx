@@ -26,7 +26,7 @@ export function Footer() {
             <GithubIcon className="h-4 w-4" />
           </a>
           <a
-            href="https://linkedin.com/in/arushkumarsingh"
+            href="https://www.linkedin.com/in/arush-kumar-singh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -35,16 +35,16 @@ export function Footer() {
             <LinkedinIcon className="h-4 w-4" />
           </a>
           <a
-            href="https://twitter.com/arushkumarsingh"
+            href="https://x.com/Arushkumarsing3"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter"
+            aria-label="X / Twitter"
             className="rounded-md p-1.5 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
           >
             <TwitterIcon className="h-4 w-4" />
           </a>
           <a
-            href="mailto:arush@example.com"
+            href="mailto:arush17kvbasti.2014@gmail.com"
             aria-label="Email"
             className="rounded-md p-1.5 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
           >

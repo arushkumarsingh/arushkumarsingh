@@ -1,42 +1,25 @@
 {
   "name": "Arush Kumar Singh",
-  "title": "Full-Stack Software Engineer & Product Builder",
-  "tagline": "Crafting clean, performance-first web applications and elegant user experiences.",
-  "bio": "I'm a software engineer passionate about building modern web applications, scalable design systems, and developer tools. With expertise across React, Next.js, Node.js, and Cloud Infrastructure, I turn complex problems into simple, minimalist software.",
+  "title": "Aerospace engineer building at the edge of hardware and AI.",
+  "tagline": "Aerospace engineer building at the edge of hardware and AI.",
+  "intro": "I'm an Aerospace Engineering graduate from IIT Kanpur who works across hardware, software, AI, and aerospace. I'm currently exploring my next role, with a focus on AI infrastructure, real-time AI, aerospace, and physical systems.",
+  "bio": "I'm an Aerospace Engineering graduate from IIT Kanpur. I've worked across aerospace, space technology, AI, and hardware data systems, including roles at GalaxEye Space and NabhDrishti Aerospace, and building products of my own. Most recently, I built XpectraFlow, a telemetry and data infrastructure system for mission-critical hardware and testing. I like problems that sit between disciplines—where software has to understand hardware, data has to work in real time, and engineering constraints matter. I'm currently looking for opportunities where I can work on AI, infrastructure, aerospace, or physical systems.",
   "location": "India",
-  "email": "arush@example.com",
-  "avatar": "/avatar.jpg",
+  "email": "arush17kvbasti.2014@gmail.com",
+  "avatar": "/avatar-placeholder.png",
   "resumeUrl": "/resume.pdf",
   "socials": {
     "github": "https://github.com/arushkumarsingh",
-    "linkedin": "https://linkedin.com/in/arushkumarsingh",
-    "twitter": "https://twitter.com/arushkumarsingh",
-    "email": "mailto:arush@example.com"
+    "linkedin": "https://www.linkedin.com/in/arush-kumar-singh",
+    "twitter": "https://x.com/Arushkumarsing3",
+    "email": "mailto:arush17kvbasti.2014@gmail.com"
   },
   "skills": {
-    "Frontend": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux",
-      "HTML/CSS"
-    ],
-    "Backend & DB": [
-      "Node.js",
-      "Express",
-      "Python",
-      "PostgreSQL",
-      "MongoDB",
-      "GraphQL"
-    ],
-    "DevOps & Tools": [
-      "Git",
-      "Docker",
-      "Vercel",
-      "AWS",
-      "CI/CD",
-      "Jest/Cypress"
-    ]
+    "Languages": ["C++", "Python", "JavaScript", "MATLAB", "CUDA"],
+    "Backend": ["FastAPI", "SQLAlchemy", "PostgreSQL"],
+    "Frontend": ["React", "Next.js"],
+    "Infrastructure": ["AWS", "Docker", "Redis", "MinIO", "TimescaleDB"],
+    "Data / Observability": ["Prometheus", "Grafana", "Apache ECharts"],
+    "AI": ["OpenAI", "Gemini", "Sentence Transformers"]
   }
 }
