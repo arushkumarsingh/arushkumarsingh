@@ -18,6 +18,8 @@ import {
   Sparkles,
   Mail,
   Send,
+  Zap,
+  Flame,
 } from "lucide-react";
 
 export default function Home() {
@@ -46,6 +48,12 @@ export default function Home() {
       <Section id="hero" className="pt-12 pb-8 sm:pt-20 sm:pb-12">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="flex-1 space-y-6">
+            {/* Motto Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              <Zap className="h-3.5 w-3.5" />
+              {profileData.motto}
+            </div>
+
             {/* Name & Tagline */}
             <div className="space-y-3">
               <h1 className="text-h1 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
@@ -75,13 +83,12 @@ export default function Home() {
                 external
               >
                 <FileText className="mr-1 h-4 w-4" />
-                Resume / Document
+                Resume / Bio PDF
               </Button>
             </div>
           </div>
 
-          {/* Profile Photo Placeholder Slot (Next.js Image) */}
-          {/* Note: Swap src below with real profile picture URL when available */}
+          {/* Profile Photo Placeholder Slot */}
           <div className="group relative shrink-0">
             <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl border-2 border-neutral-200 bg-neutral-100 shadow-xs sm:h-32 sm:w-32 dark:border-neutral-800 dark:bg-neutral-900">
               {profileData.avatar ? (
@@ -98,17 +105,45 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Quote Banner */}
+        <div className="mt-10 flex items-start gap-3 rounded-xl border border-neutral-200/80 bg-neutral-50/60 p-4 font-mono text-sm text-neutral-700 sm:p-5 dark:border-neutral-800/80 dark:bg-neutral-900/60 dark:text-neutral-300">
+          <Flame className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
+          <p className="italic">&ldquo;{profileData.quote}&rdquo;</p>
+        </div>
       </Section>
 
-      {/* 5.2 About Section */}
+      {/* 5.2 About & Mindset Section */}
       <Section
         id="about"
-        title="About Me"
-        subtitle="Background & engineering focus"
+        title="About & Mindset"
+        subtitle="Background, core principles, and engineering philosophy"
       >
         <div className="space-y-8">
           <div className="prose dark:prose-invert text-body space-y-4 leading-relaxed text-neutral-600 dark:text-neutral-300">
             <p>{profileData.bio}</p>
+          </div>
+
+          {/* Taglines / Principles List */}
+          <div className="space-y-4 border-t border-neutral-200/60 pt-4 dark:border-neutral-800/60">
+            <h3 className="text-h3 text-neutral-900 dark:text-neutral-100">
+              Core Tenets
+            </h3>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {profileData.taglines.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-3 rounded-xl border border-neutral-200/80 bg-neutral-50/50 p-3.5 dark:border-neutral-800/80 dark:bg-neutral-900/50"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-indigo-500/10 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                    0{idx + 1}
+                  </span>
+                  <p className="text-sm leading-snug font-medium text-neutral-800 dark:text-neutral-200">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Categorized Skills Grid */}
@@ -176,7 +211,6 @@ export default function Home() {
                       Repository
                     </a>
                   ) : (
-                    /* Dummy placeholder link comment */
                     <span className="text-xs text-neutral-400 italic dark:text-neutral-500">
                       {/* GitHub / Demo link [TBD] */}
                     </span>
@@ -209,7 +243,6 @@ export default function Home() {
                     </span>
                   </h3>
 
-                  {/* Dates badge with TBD support */}
                   <span className="rounded bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
                     {exp.period}
                   </span>
