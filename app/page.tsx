@@ -3,11 +3,12 @@ import profileData from "@/data/profile.json";
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
 import booksData from "@/data/books.json";
+import blogsData from "@/data/blogs.json";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, BookOpen, ExternalLink, User, FolderGit2, History } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, BookOpen, ExternalLink, User, FolderGit2, History, PenTool, FileText } from "lucide-react";
 
 function renderFormattedText(text?: string): React.ReactNode {
   if (!text) return null;
@@ -87,45 +88,49 @@ export default function Home() {
               {renderFormattedText(profileData.bio)}
             </p>
 
-            {/* Notepad Navigation Bar */}
-            <div className="pt-3 space-y-1.5">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-medium">
-                Notepad Navigation
-              </span>
-              <div className="p-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 flex flex-wrap items-center gap-2">
+            {/* Section Quick Jump Bar */}
+            <div className="pt-3">
+              <div className="p-1.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100/80 dark:bg-neutral-900/80 flex flex-wrap items-center gap-1.5">
                 <a
                   href="#about"
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
                 >
-                  <User className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
-                  [about]
+                  <User className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
+                  [overview]
                 </a>
                 <a
                   href="#projects"
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
                 >
-                  <FolderGit2 className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  <FolderGit2 className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
                   [projects]
                 </a>
                 <a
                   href="#experience"
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
                 >
-                  <History className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  <History className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
                   [experience]
                 </a>
                 <a
-                  href="#books"
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                  href="#writing"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
                 >
-                  <BookOpen className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  <FileText className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
+                  [writing]
+                </a>
+                <a
+                  href="#books"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
                   [books]
                 </a>
                 <a
                   href="#contact"
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-2xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
                 >
-                  <Mail className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  <Mail className="w-3.5 h-3.5 text-indigo-700 dark:text-cyan-400" />
                   [contact]
                 </a>
               </div>
@@ -283,7 +288,54 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 4. Books Section */}
+      {/* 4. Writing & Notes Section */}
+      <Section id="writing" title="writing & notes" subtitle="Essays, engineering notes, and thoughts on AI infrastructure and systems">
+        <div className="grid grid-cols-1 gap-4">
+          {blogsData.map((post) => (
+            <article
+              key={post.id}
+              className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 shadow-2xs hover:shadow-sm transition-all space-y-2.5 group"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-indigo-700 dark:group-hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
+                  <PenTool className="w-4 h-4 text-indigo-700 dark:text-cyan-400 shrink-0" />
+                  {post.title}
+                </h3>
+                <div className="flex items-center gap-2 text-xs font-mono text-neutral-600 dark:text-neutral-400 shrink-0">
+                  <span>{post.date}</span>
+                  <span>·</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </div>
+
+              <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
+                {post.summary}
+              </p>
+
+              <div className="pt-1 flex items-center justify-between">
+                <div className="flex flex-wrap gap-1.5">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700/60 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={post.slug}
+                  className="text-xs font-mono font-medium text-indigo-700 dark:text-cyan-400 hover:underline inline-flex items-center gap-1"
+                >
+                  [read note]
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* 5. Books Section */}
       <Section id="books" title="books & reading" subtitle="Books that shaped my thinking on technology, systems, and human cognition">
         <div className="grid grid-cols-1 gap-4">
           {booksData.map((book) => (

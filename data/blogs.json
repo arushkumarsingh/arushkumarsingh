@@ -1,0 +1,29 @@
+[
+  {
+    "id": "telemetry-at-scale-xpectraflow",
+    "title": "Telemetry at Scale: Building Infrastructure for Mission-Critical Hardware",
+    "date": "2026-08-15",
+    "readTime": "5 min read",
+    "summary": "Lessons learned while building XpectraFlow—a real-time telemetry and data infrastructure system handling high-frequency sensor streams from physical testing rigs.",
+    "tags": ["Telemetry", "Systems", "C++", "TimescaleDB"],
+    "slug": "#"
+  },
+  {
+    "id": "first-principles-hardware-ai",
+    "title": "First-Principles Thinking at the Intersection of AI and Aerospace",
+    "date": "2026-06-20",
+    "readTime": "4 min read",
+    "summary": "Why hardware-aware software engineering matters when designing real-time AI pipelines for physical systems and space technology.",
+    "tags": ["AI Infra", "Aerospace", "First Principles"],
+    "slug": "#"
+  },
+  {
+    "id": "notes-on-obsession-and-curiosity",
+    "title": "Notes on Obsession, Curiosity, and Learning by Doing",
+    "date": "2026-04-10",
+    "readTime": "3 min read",
+    "summary": "Personal observations on why obsession beats raw talent, and how building end-to-end projects accelerates true understanding.",
+    "tags": ["Philosophy", "Learning", "Engineering"],
+    "slug": "#"
+  }
+]
