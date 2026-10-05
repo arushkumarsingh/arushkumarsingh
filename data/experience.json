@@ -3,7 +3,6 @@
     "id": "exp-xpectraflow",
     "role": "Founder / CTO",
     "company": "XpectraFlow",
-    "period": "[DATES TBD]",
     "description": "Built telemetry and data infrastructure for aerospace and other mission-critical hardware. Worked across product, software architecture, real-time data ingestion, signal processing, visualization, and customer development.",
     "technologies": ["Python", "FastAPI", "PostgreSQL", "TimescaleDB", "Redis", "C++"]
   },
@@ -11,23 +10,20 @@
     "id": "exp-buttercut",
     "role": "CTO / Co-founder",
     "company": "ButterCut.ai",
-    "period": "[DATES TBD]",
     "description": "Built an AI video editing product for vernacular creators, working across engineering, product, and early-stage company building.",
     "technologies": ["AI", "Video", "Python", "JavaScript", "Product"]
   },
   {
     "id": "exp-galaxeye",
-    "role": "[TITLE TBD]",
+    "role": "Aerospace & Space Tech",
     "company": "GalaxEye Space",
-    "period": "[DATES TBD]",
-    "description": "Worked on aerospace/space technology before building XpectraFlow.",
+    "description": "Worked on aerospace and space technology before building XpectraFlow.",
     "technologies": ["Aerospace", "Space Tech"]
   },
   {
     "id": "exp-nabhdrishti",
-    "role": "[TITLE TBD]",
+    "role": "Aerospace Engineering",
     "company": "NabhDrishti Aerospace",
-    "period": "[DATES TBD]",
     "description": "Worked on aerospace technology and engineering.",
     "technologies": ["Aerospace Engineering"]
   }

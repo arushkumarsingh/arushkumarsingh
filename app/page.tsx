@@ -7,6 +7,7 @@ import projectsData from "@/data/projects.json";
 import creativityData from "@/data/creativity.json";
 import booksData from "@/data/books.json";
 import blogsData from "@/data/blogs.json";
+import experienceData from "@/data/experience.json";
 import { Card } from "@/components/Card";
 import { Mail, ExternalLink } from "lucide-react";
 
@@ -47,6 +48,7 @@ function renderFormattedText(text?: string): React.ReactNode {
 
 const SECTION_BUTTONS = [
   { id: "overview", label: "overview" },
+  { id: "experience", label: "experience" },
   { id: "projects", label: "projects" },
   { id: "creativity", label: "creativity" },
   { id: "blog", label: "blog" },
@@ -278,6 +280,51 @@ export default function Home() {
             </div>
           )}
 
+          {/* 2. EXPERIENCE */}
+          {activeSection === "experience" && (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 pt-1">
+                {experienceData.map((exp) => (
+                  <div
+                    key={exp.id}
+                    className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-2.5"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                        {exp.role}{" "}
+                        <span className="text-indigo-700 dark:text-cyan-400 font-medium">
+                          @ {exp.company}
+                        </span>
+                      </h3>
+                      {"period" in exp && (exp as { period?: string }).period && (
+                        <span className="text-xs font-mono text-neutral-600 dark:text-neutral-400">
+                          {(exp as { period?: string }).period}
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
+                      {exp.description}
+                    </p>
+
+                    {exp.technologies && exp.technologies.length > 0 && (
+                      <div className="flex flex-wrap gap-1 pt-1">
+                        {exp.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700/60 font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* 2. PROJECTS */}
           {activeSection === "projects" && (
             <div className="space-y-4">
@@ -305,7 +352,7 @@ export default function Home() {
               {/* Highlighted Professor Meme Story */}
               <div className="p-4 sm:p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/80 shadow-2xs">
                 <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">
-                  I am so creative that I can create 100s of memes in 1 hr. Once a professor gave the option to submit an assignment or submit memes. I opened the email at 2 AM, created 20 memes in half an hour, and sent them to the professor. Got{" "}
+                  I can create 100s of memes in 1 hr. Once a professor gave the option to submit an assignment or submit memes. I opened the email at 2 AM, created 20 memes in half an hour, and sent them to the professor. Got{" "}
                   <a
                     href="https://lnkd.in/p/ejCVqRx2"
                     target="_blank"
