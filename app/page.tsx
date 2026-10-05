@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import profileData from "@/data/profile.json";
 import projectsData from "@/data/projects.json";
-import experienceData from "@/data/experience.json";
 import booksData from "@/data/books.json";
 import blogsData from "@/data/blogs.json";
 import { Card } from "@/components/Card";
@@ -57,8 +56,7 @@ function renderFormattedText(text?: string): React.ReactNode {
 const SECTION_BUTTONS = [
   { id: "overview", label: "overview" },
   { id: "projects", label: "projects" },
-  { id: "experience", label: "experience" },
-  { id: "writing", label: "writing" },
+  { id: "blog", label: "blog" },
   { id: "books", label: "books" },
   { id: "contact", label: "contact" },
 ];
@@ -355,102 +353,39 @@ export default function Home() {
             </div>
           )}
 
-          {/* 3. EXPERIENCE */}
-          {activeSection === "experience" && (
-            <div className="space-y-6">
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Career trajectory across aerospace, AI, and systems engineering.
-              </p>
-              <div className="relative pl-5 border-l-2 border-neutral-300 dark:border-neutral-800 space-y-7 pt-1">
-                {experienceData.map((exp) => (
-                  <div key={exp.id} className="relative group">
-                    <div className="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-neutral-950 bg-indigo-700 dark:bg-cyan-400 transition-transform group-hover:scale-125" />
-                    <div className="space-y-1.5">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                        <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-                          {exp.role}{" "}
-                          <span className="text-indigo-700 dark:text-cyan-400 font-medium">
-                            @ {exp.company}
-                          </span>
-                        </h3>
-                        <span className="text-xs font-mono text-neutral-700 dark:text-neutral-300 bg-neutral-200/80 dark:bg-neutral-800 px-2 py-0.5 rounded font-medium">
-                          {exp.period}
-                        </span>
-                      </div>
-
-                      <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
-                        {exp.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1 pt-1">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-200/80 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-300/60 dark:border-neutral-700/60 font-medium"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 4. WRITING */}
-          {activeSection === "writing" && (
+          {/* 3. BLOG: Upcoming blogs */}
+          {activeSection === "blog" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Essays, engineering notes, and observations on telemetry, AI, and systems.
+                Upcoming essays and personal notes.
               </p>
-              <div className="grid grid-cols-1 gap-4 pt-1">
+              <div className="grid grid-cols-1 gap-3.5 pt-1">
                 {blogsData.map((post) => (
                   <article
                     key={post.id}
-                    className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs hover:shadow-sm transition-all space-y-2.5 group"
+                    className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-2"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-indigo-700 dark:group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                         {post.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-xs font-mono text-neutral-600 dark:text-neutral-400 shrink-0">
-                        <span>{post.date}</span>
-                        <span>·</span>
-                        <span>{post.readTime}</span>
-                      </div>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700/60 w-fit">
+                        upcoming
+                      </span>
                     </div>
 
-                    <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
-                      {post.summary}
-                    </p>
-
-                    <div className="pt-1 flex items-center justify-between">
-                      <div className="flex flex-wrap gap-1.5">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700/60 font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <a
-                        href={post.slug}
-                        className="text-xs font-mono font-medium text-indigo-700 dark:text-cyan-400 hover:underline inline-flex items-center gap-1"
-                      >
-                        read note ↗
-                      </a>
-                    </div>
+                    {post.summary && (
+                      <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed font-normal">
+                        {post.summary}
+                      </p>
+                    )}
                   </article>
                 ))}
               </div>
             </div>
           )}
 
-          {/* 5. BOOKS */}
+          {/* 4. BOOKS */}
           {activeSection === "books" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
@@ -492,7 +427,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* 6. CONTACT */}
+          {/* 5. CONTACT */}
           {activeSection === "contact" && (
             <div className="space-y-4">
               <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 space-y-4 shadow-2xs">
