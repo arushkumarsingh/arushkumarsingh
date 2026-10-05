@@ -292,9 +292,21 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                       <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                         {exp.role}{" "}
-                        <span className="text-indigo-700 dark:text-cyan-400 font-medium">
-                          @ {exp.company}
-                        </span>
+                        {"url" in exp && (exp as { url?: string }).url ? (
+                          <a
+                            href={(exp as { url?: string }).url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-indigo-700 dark:text-cyan-400 font-medium underline underline-offset-4 decoration-indigo-300 dark:decoration-cyan-700 hover:decoration-indigo-700 dark:hover:decoration-cyan-300 transition-colors inline-flex items-center gap-0.5"
+                          >
+                            <span>@ {exp.company}</span>
+                            <span className="text-[10px] font-mono">↗</span>
+                          </a>
+                        ) : (
+                          <span className="text-indigo-700 dark:text-cyan-400 font-medium">
+                            @ {exp.company}
+                          </span>
+                        )}
                       </h3>
                       {"period" in exp && (exp as { period?: string }).period && (
                         <span className="text-xs font-mono text-neutral-600 dark:text-neutral-400">

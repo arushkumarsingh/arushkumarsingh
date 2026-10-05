@@ -3,8 +3,9 @@
     "id": "exp-xpectra",
     "role": "Founder",
     "company": "Xpectra",
+    "url": "https://xpectraflow.com",
     "period": "Mar'26 - Present",
-    "description": "Founded and built Xpectra, a telemetry data infrastructure platform for high-rate aerospace sensor data. Took the product from 0 to 1, with deployments across Dream Aerospace and Nabhdrishti Aerospace.",
+    "description": "Founded and built Xpectra, a telemetry data infrastructure platform for high-rate aerospace sensor data. Took the product from 0 to 1.",
     "highlights": [
       "Designed PostgreSQL + TimescaleDB storage with hypertables, indexing, and optimized time-window queries.",
       "Built a rule-based anomaly engine for thresholds, outliers, flatlining, missing data, and trend detection.",
@@ -13,12 +14,21 @@
       "Architected a hardware-agnostic data layer supporting heterogeneous formats across evolving hardware configurations.",
       "Built Parquet + S3 archival pipelines for scalable storage of raw and processed telemetry."
     ],
-    "technologies": ["TimescaleDB", "PostgreSQL", "Python", "CCSDS Telemetry", "S3", "Parquet", "Real-Time Streaming"]
+    "technologies": [
+      "TimescaleDB",
+      "PostgreSQL",
+      "Python",
+      "CCSDS Telemetry",
+      "S3",
+      "Parquet",
+      "Real-Time Streaming"
+    ]
   },
   {
     "id": "exp-buttercut",
     "role": "Co-Founder and CTO",
     "company": "ButterCutAI",
+    "url": "https://buttercut.ai",
     "period": "Sep'25 - Mar'26",
     "description": "Shipped 3 consumer features and 1 enterprise feature within 3 months, supporting 500+ DAU and 15k+ signups. Took the product from zero to MVP, owning architecture, infrastructure, LLM agents, and core rendering logic.",
     "highlights": [
@@ -28,12 +38,22 @@
       "Integrated LiteLLM for model routing and cost control, and Langfuse for prompt versioning and agent observability.",
       "Integrated ElevenLabs for neural voice synthesis and built audio-video alignment logic for dubbing workflows."
     ],
-    "technologies": ["Python", "Node.js", "AWS", "FFmpeg", "LLM Agents", "LiteLLM", "Langfuse", "ElevenLabs"]
+    "technologies": [
+      "Python",
+      "Node.js",
+      "AWS",
+      "FFmpeg",
+      "LLM Agents",
+      "LiteLLM",
+      "Langfuse",
+      "ElevenLabs"
+    ]
   },
   {
     "id": "exp-galaxeye",
     "role": "Algorithms Developer",
     "company": "GalaxEye Space",
+    "url": "https://galaxeye.space",
     "period": "Oct'24 - Aug'25",
     "description": "Engineered space algorithms, satellite telemetry packet decoders, multithreaded sensor fusion architectures, and SAR processing pipelines.",
     "highlights": [
@@ -46,12 +66,22 @@
       "Developed the Range-Doppler algorithm for satellite SAR data and validated it using Sentinel open-source data.",
       "Developed Docker Compose setup and automated CI/CD pipeline to build and push processor Docker images to AWS ECR."
     ],
-    "technologies": ["C++", "CUDA", "Python", "Multiprocessing", "SAR Processing", "Docker", "AWS ECR", "CI/CD"]
+    "technologies": [
+      "C++",
+      "CUDA",
+      "Python",
+      "Multiprocessing",
+      "SAR Processing",
+      "Docker",
+      "AWS ECR",
+      "CI/CD"
+    ]
   },
   {
     "id": "exp-nabhdrishti",
     "role": "Founding Engineer",
     "company": "Nabhdrishti Aerospace",
+    "url": "https://nabhdrishti.in",
     "period": "Feb'24 - Sep'24",
     "description": "Engineered gas turbine thermodynamic performance cycles, data acquisition systems, spray particle image processing, and cloud compute automation.",
     "highlights": [
@@ -62,6 +92,15 @@
       "Developed multiprocessing Python code with OpenCV to process 1,000+ TIFF images to measure spray particle size.",
       "Deployed Ansys on AWS EC2 high-core machines with AWS Lambda automation for instance spin-up, spot interruption handling, and S3 backup."
     ],
-    "technologies": ["Python", "Thermodynamic Cycles", "OpenCV", "Data Acquisition", "Ansys", "AWS EC2", "AWS Lambda", "S3"]
+    "technologies": [
+      "Python",
+      "Thermodynamic Cycles",
+      "OpenCV",
+      "Data Acquisition",
+      "Ansys",
+      "AWS EC2",
+      "AWS Lambda",
+      "S3"
+    ]
   }
 ]
