@@ -282,7 +282,7 @@ export default function Home() {
               {/* Core Tenets */}
               <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 font-mono lowercase">
-                  core tenets
+                  My Core
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                   {profileData.taglines.map((item, idx) => (
