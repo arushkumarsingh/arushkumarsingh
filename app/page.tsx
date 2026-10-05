@@ -7,7 +7,7 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, BookOpen, ExternalLink } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, BookOpen, ExternalLink, User, FolderGit2, History } from "lucide-react";
 
 function renderFormattedText(text?: string): React.ReactNode {
   if (!text) return null;
@@ -87,15 +87,48 @@ export default function Home() {
               {renderFormattedText(profileData.bio)}
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <Button href="#projects" variant="primary" size="sm">
-                Explore Projects
-                <ArrowDown className="w-3.5 h-3.5 ml-1" />
-              </Button>
-              <Button href="#contact" variant="outline" size="sm">
-                <Mail className="w-3.5 h-3.5 mr-1" />
-                Contact
-              </Button>
+            {/* Notepad Navigation Bar */}
+            <div className="pt-3 space-y-1.5">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-medium">
+                Notepad Navigation
+              </span>
+              <div className="p-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 flex flex-wrap items-center gap-2">
+                <a
+                  href="#about"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <User className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  [about]
+                </a>
+                <a
+                  href="#projects"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <FolderGit2 className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  [projects]
+                </a>
+                <a
+                  href="#experience"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <History className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  [experience]
+                </a>
+                <a
+                  href="#books"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  [books]
+                </a>
+                <a
+                  href="#contact"
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400 bg-white dark:bg-neutral-950 border border-neutral-200/80 dark:border-neutral-800 shadow-xs hover:border-indigo-300 dark:hover:border-neutral-700 transition-all inline-flex items-center gap-1.5"
+                >
+                  <Mail className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                  [contact]
+                </a>
+              </div>
             </div>
           </div>
 
