@@ -70,18 +70,13 @@ export function Nav() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-neutral-950/90 border-b border-neutral-200/80 dark:border-neutral-800/80 transition-colors">
       <div className="layout-container flex items-center justify-between h-14">
         {/* Brand logo & tagline indicator */}
-        <a
+        <Link
           href="/"
           onClick={handleBrandClick}
           className="flex items-center gap-2 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 hover:text-indigo-700 dark:hover:text-cyan-400 transition-colors cursor-pointer"
         >
-          <span>
-            <span className="font-light">Arush Kumar</span> <span className="font-bold">Singh</span>
-          </span>
-          <span className="hidden sm:inline-block text-xs font-mono font-normal text-neutral-500 dark:text-neutral-400">
-            · portfolio
-          </span>
-        </a>
+          <span className="font-light">Arush Kumar Singh</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-5 text-xs font-mono lowercase font-medium">
@@ -92,11 +87,10 @@ export function Nav() {
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={(e) => handleNavClick(item.id, e)}
-                className={`transition-colors cursor-pointer ${
-                  isActive
-                    ? "text-indigo-700 dark:text-cyan-400 font-bold underline underline-offset-4"
-                    : "text-neutral-700 dark:text-neutral-300 hover:text-indigo-700 dark:hover:text-cyan-400"
-                }`}
+                className={`transition-colors cursor-pointer ${isActive
+                  ? "text-indigo-700 dark:text-cyan-400 font-bold underline underline-offset-4"
+                  : "text-neutral-700 dark:text-neutral-300 hover:text-indigo-700 dark:hover:text-cyan-400"
+                  }`}
               >
                 {item.label}
               </a>
@@ -130,11 +124,10 @@ export function Nav() {
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={(e) => handleNavClick(item.id, e)}
-                className={`block py-1.5 font-medium transition-colors cursor-pointer ${
-                  isActive
-                    ? "text-indigo-700 dark:text-cyan-400 font-bold underline underline-offset-4"
-                    : "text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400"
-                }`}
+                className={`block py-1.5 font-medium transition-colors cursor-pointer ${isActive
+                  ? "text-indigo-700 dark:text-cyan-400 font-bold underline underline-offset-4"
+                  : "text-neutral-800 dark:text-neutral-200 hover:text-indigo-700 dark:hover:text-cyan-400"
+                  }`}
               >
                 {item.label}
               </a>
