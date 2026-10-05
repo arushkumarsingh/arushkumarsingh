@@ -52,7 +52,7 @@ export function Nav() {
       window.dispatchEvent(new CustomEvent("open-section", { detail: null }));
       setActiveSection(null);
     } else {
-      window.location.hash = id;
+      history.pushState(null, "", `#${id}`);
       window.dispatchEvent(new CustomEvent("open-section", { detail: id }));
       setActiveSection(id);
     }

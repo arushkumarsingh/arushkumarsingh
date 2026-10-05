@@ -108,7 +108,7 @@ export default function Home() {
     } else {
       // Expand
       setActiveSection(id);
-      window.location.hash = id;
+      history.pushState(null, "", `#${id}`);
       window.dispatchEvent(new CustomEvent("open-section", { detail: id }));
       setTimeout(() => {
         sectionContentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
