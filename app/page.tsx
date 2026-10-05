@@ -9,6 +9,40 @@ import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
 import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Flame, BookOpen, ExternalLink } from "lucide-react";
 
+function renderFormattedText(text?: string): React.ReactNode {
+  if (!text) return null;
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const label = match[1];
+    const url = match[2];
+    parts.push(
+      <a
+        key={match.index}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-indigo-700 dark:text-cyan-400 font-medium underline underline-offset-2 hover:opacity-80 transition-opacity"
+      >
+        {label}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts;
+}
+
 export default function Home() {
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -38,12 +72,20 @@ export default function Home() {
           <div className="space-y-5 flex-1">
             <div className="space-y-2">
               <h1 className="text-h1 text-neutral-900 dark:text-neutral-100 tracking-tight">{profileData.name}</h1>
-              <p className="text-base font-medium text-indigo-600 dark:text-cyan-400">{profileData.tagline}</p>
+              {(profileData as { tagline?: string }).tagline && (
+                <p className="text-base font-medium text-indigo-700 dark:text-cyan-400">
+                  {(profileData as { tagline?: string }).tagline}
+                </p>
+              )}
             </div>
 
-            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">{profileData.intro}</p>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">
+              {renderFormattedText(profileData.intro)}
+            </p>
 
-            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">{profileData.bio}</p>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">
+              {renderFormattedText(profileData.bio)}
+            </p>
 
             {/* Quote Banner */}
             <div className="p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/60 text-xs font-mono text-neutral-800 dark:text-neutral-200 flex items-start gap-3">
