@@ -1,0 +1,23 @@
+[
+  {
+    "id": "innovators-dilemma",
+    "title": "The Innovator's Dilemma",
+    "author": "Clayton M. Christensen",
+    "description": "Explores how outstanding, well-managed companies can do everything right and yet still lose market leadership to disruptive innovations.",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/26160019-the-innovator-s-dilemma"
+  },
+  {
+    "id": "thinking-fast-and-slow",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "description": "Nobel laureate Daniel Kahneman explains the two systems that drive how we think—System 1 (fast, emotional, intuitive) and System 2 (slow, logical, deliberate).",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow"
+  },
+  {
+    "id": "outliers",
+    "title": "Outliers: The Story of Success",
+    "author": "Malcolm Gladwell",
+    "description": "Examines the complex web of culture, family, generation, and idiosyncratic experiences behind high achievers and world-changing success.",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/3228917-outliers"
+  }
+]
