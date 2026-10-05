@@ -8,8 +8,12 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-neutral-200/80 dark:border-neutral-800/80 py-8">
       <div className="layout-container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-700 dark:text-neutral-400">
-        <div>
-          <p className="font-medium">© {currentYear} Arush Kumar Singh</p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+          <p className="font-medium text-neutral-800 dark:text-neutral-300">© {currentYear} Arush Kumar Singh</p>
+          <span className="hidden sm:inline text-neutral-300 dark:text-neutral-700">·</span>
+          <p className="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            updated at: October 5, 2026
+          </p>
         </div>
 
         <div className="flex items-center gap-3">
