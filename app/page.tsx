@@ -8,16 +8,7 @@ import creativityData from "@/data/creativity.json";
 import booksData from "@/data/books.json";
 import blogsData from "@/data/blogs.json";
 import { Card } from "@/components/Card";
-import {
-  Code2,
-  Server,
-  Wrench,
-  Cpu,
-  BarChart3,
-  Sparkles,
-  Mail,
-  ExternalLink,
-} from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
 
 // Markdown link parser for intro & paragraphs
 function renderFormattedText(text?: string): React.ReactNode {
@@ -122,24 +113,6 @@ export default function Home() {
     window.dispatchEvent(new CustomEvent("open-section", { detail: null }));
   };
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Languages":
-        return <Code2 className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      case "Backend":
-        return <Server className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      case "Frontend":
-        return <Code2 className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      case "Infrastructure":
-        return <Wrench className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      case "Data / Observability":
-        return <BarChart3 className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      case "AI":
-        return <Sparkles className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-      default:
-        return <Cpu className="w-4 h-4 text-indigo-600 dark:text-cyan-400" />;
-    }
-  };
 
   // Get paragraphs from profileData: fallback to bio if paragraphs is not defined
   const paragraphs = (profileData as { paragraphs?: string[] }).paragraphs || [profileData.bio];
@@ -301,35 +274,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Skills & Technologies */}
-              <div className="space-y-3 pt-3 border-t border-neutral-200/80 dark:border-neutral-800/80">
-                <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 font-mono lowercase">
-                  skills & technologies
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                  {Object.entries(profileData.skills).map(([category, items]) => (
-                    <div
-                      key={category}
-                      className="p-3.5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 space-y-2.5 shadow-2xs"
-                    >
-                      <div className="flex items-center gap-2 font-semibold text-xs text-neutral-900 dark:text-neutral-100">
-                        {getCategoryIcon(category)}
-                        {category}
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {items.map((skill) => (
-                          <span
-                            key={skill}
-                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium border border-neutral-200/60 dark:border-neutral-700/60"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+
             </div>
           )}
 
@@ -382,11 +327,6 @@ export default function Home() {
                       <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                         {item.title}
                       </h3>
-                      {item.role && (
-                        <span className="text-xs font-mono text-indigo-700 dark:text-cyan-400 font-medium">
-                          {item.role}
-                        </span>
-                      )}
                     </div>
 
                     <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
