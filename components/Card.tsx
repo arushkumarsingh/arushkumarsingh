@@ -7,13 +7,12 @@ export interface CardProps {
   tags?: string[];
   link?: string;
   githubUrl?: string;
-  pdfUrl?: string;
   role?: string;
   period?: string;
   className?: string;
 }
 
-export function Card({ title, description, tags, link, githubUrl, pdfUrl, role, period, className = "" }: CardProps) {
+export function Card({ title, description, tags, link, githubUrl, role, period, className = "" }: CardProps) {
   return (
     <div
       className={`group relative rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/60 p-5 transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700 z-depth-1 ${className}`}
@@ -50,7 +49,7 @@ export function Card({ title, description, tags, link, githubUrl, pdfUrl, role, 
         </div>
       )}
 
-      {(link || githubUrl || pdfUrl) && (
+      {(link || githubUrl) && (
         <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-wrap items-center gap-2 text-xs font-mono">
           {githubUrl && githubUrl !== "#" && (
             <a
@@ -70,18 +69,7 @@ export function Card({ title, description, tags, link, githubUrl, pdfUrl, role, 
               rel="noopener noreferrer"
               className="px-2.5 py-0.5 rounded border border-indigo-500/30 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-500/10 transition-colors"
             >
-              [demo]
-            </a>
-          )}
-
-          {pdfUrl && (
-            <a
-              href={pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2.5 py-0.5 rounded border border-indigo-500/30 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-500/10 transition-colors"
-            >
-              [pdf]
+              [link]
             </a>
           )}
         </div>

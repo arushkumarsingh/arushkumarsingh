@@ -6,7 +6,7 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { FileText, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Send, Flame } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Send, Flame } from "lucide-react";
 
 export default function Home() {
   const getCategoryIcon = (category: string) => {
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="space-y-4">
-      {/* 1. Hero / al-folio Profile Section */}
+      {/* 1. Hero / Profile Section */}
       <Section id="about" className="pt-10 sm:pt-14 pb-8">
         <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-8">
           {/* Left Bio Column */}
@@ -55,11 +55,12 @@ export default function Home() {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Button href="#projects" variant="primary" size="sm">
-                View Projects
+                Explore Projects
+                <ArrowDown className="w-3.5 h-3.5 ml-1" />
               </Button>
-              <Button href={profileData.resumeUrl} variant="outline" size="sm" external>
-                <FileText className="w-3.5 h-3.5 mr-1" />
-                Resume PDF
+              <Button href="#contact" variant="outline" size="sm">
+                <Mail className="w-3.5 h-3.5 mr-1" />
+                Contact
               </Button>
             </div>
           </div>
@@ -184,7 +185,7 @@ export default function Home() {
       </Section>
 
       {/* 3. Experience Timeline */}
-      <Section id="experience" title="experience & roles" subtitle="Career trajectory across aerospace, AI, and engineering">
+      <Section id="experience" title="timeline & journey" subtitle="Career trajectory across aerospace, AI, and engineering">
         <div className="relative pl-5 border-l-2 border-neutral-200 dark:border-neutral-800 space-y-8">
           {experienceData.map((exp) => (
             <div key={exp.id} className="relative group">
