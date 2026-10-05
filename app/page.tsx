@@ -2,11 +2,12 @@ import Image from "next/image";
 import profileData from "@/data/profile.json";
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
+import booksData from "@/data/books.json";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Flame } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Flame, BookOpen, ExternalLink } from "lucide-react";
 
 export default function Home() {
   const getCategoryIcon = (category: string) => {
@@ -220,7 +221,47 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 4. Contact Section */}
+      {/* 4. Books Section */}
+      <Section id="books" title="books & reading" subtitle="Books that shaped my thinking on technology, systems, and human cognition">
+        <div className="grid grid-cols-1 gap-4">
+          {booksData.map((book) => (
+            <div
+              key={book.id}
+              className="p-5 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 shadow-sm hover:shadow-md transition-all space-y-2.5 group"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-indigo-600 dark:text-cyan-400 shrink-0" />
+                  <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors">
+                    {book.title}
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400">
+                  by {book.author}
+                </span>
+              </div>
+
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                {book.description}
+              </p>
+
+              <div className="pt-1">
+                <a
+                  href={book.goodreadsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-indigo-600 dark:text-cyan-400 hover:underline"
+                >
+                  [Goodreads]
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* 5. Contact Section */}
       <Section id="contact" title="contact" subtitle="Feel free to reach out for technical discussions, AI infrastructure, or aerospace research.">
         <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 space-y-4">
           <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
