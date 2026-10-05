@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Arush Kumar Singh — Aerospace Engineer & AI Infrastructure",
+    default: "Arush Kumar Singh | Aerospace Engineer & AI Infrastructure",
     template: "%s | Arush Kumar Singh",
   },
   description:
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://arushkumarsingh.github.io",
-    title: "Arush Kumar Singh — Aerospace Engineer & AI Infrastructure",
+    title: "Arush Kumar Singh | Aerospace Engineer & AI Infrastructure",
     description:
       "Aerospace engineer building at the edge of hardware and AI. IIT Kanpur graduate working across AI infrastructure, real-time telemetry, aerospace, and physical systems.",
     siteName: "Arush Kumar Singh",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arush Kumar Singh — Aerospace Engineer",
+    title: "Arush Kumar Singh | Aerospace Engineer",
     description: "Aerospace engineer building at the edge of hardware and AI.",
     creator: "@Arushkumarsing3",
   },

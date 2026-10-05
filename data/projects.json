@@ -3,7 +3,7 @@
     "id": "xpectraflow",
     "title": "XpectraFlow",
     "shortDescription": "Telemetry and data infrastructure for mission-critical hardware.",
-    "description": "XpectraFlow was built to make hardware testing and telemetry workflows faster and more reliable. I worked across the product and technical stack—from real-time ingestion and signal processing to APIs, visualization, data formats, and deployment.",
+    "description": "XpectraFlow was built to make hardware testing and telemetry workflows faster and more reliable. I worked across the product and technical stack, from real-time ingestion and signal processing to APIs, visualization, data formats, and deployment.",
     "tags": ["Python", "FastAPI", "PostgreSQL", "TimescaleDB", "Redis", "MinIO", "React", "AWS", "C++"],
     "link": "#",
     "githubUrl": "#"

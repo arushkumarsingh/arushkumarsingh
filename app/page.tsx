@@ -242,11 +242,10 @@ export default function Home() {
                   key={btn.id}
                   onClick={() => toggleSection(btn.id)}
                   aria-expanded={isOpen}
-                  className={`px-4 py-2 rounded-md text-sm font-mono font-medium transition-all cursor-pointer select-none border ${
-                    isOpen
-                      ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 border-neutral-900 dark:border-neutral-100 shadow-xs"
-                      : "bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 border-neutral-300 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white"
-                  }`}
+                  className={`px-4 py-2 rounded-md text-sm font-mono font-medium transition-all cursor-pointer select-none border ${isOpen
+                    ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 border-neutral-900 dark:border-neutral-100 shadow-xs"
+                    : "bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 border-neutral-300 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+                    }`}
                 >
                   {btn.label}
                 </button>
@@ -355,12 +354,24 @@ export default function Home() {
             </div>
           )}
 
-          {/* 3. CREATIVITY: Comedy club, meme hub, viral video */}
+          {/* 3. CREATIVITY */}
           {activeSection === "creativity" && (
-            <div className="space-y-4">
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Comedy, viral content, and creative initiatives built at IIT Kanpur.
-              </p>
+            <div className="space-y-5">
+              {/* Highlighted Professor Meme Story */}
+              <div className="p-4 sm:p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/80 shadow-2xs">
+                <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">
+                  I am so creative that I can create 100s of memes in 1 hr. Once a professor gave the option to submit an assignment or submit memes. I opened the email at 2 AM, created 20 memes in half an hour, and sent them to the professor. Got{" "}
+                  <a
+                    href="https://lnkd.in/p/ejCVqRx2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-700 dark:text-cyan-400 font-medium underline underline-offset-2 hover:opacity-80 transition-opacity inline-flex items-center gap-1"
+                  >
+                    featured in the professor&apos;s LinkedIn post ↗
+                  </a>
+                  .
+                </p>
+              </div>
               <div className="grid grid-cols-1 gap-4 pt-1">
                 {creativityData.map((item) => (
                   <div
@@ -495,8 +506,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 space-y-4 shadow-2xs">
                 <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
-                  I am always open to discussions around AI infrastructure, real-time telemetry, aerospace systems, and physical computing.
-                </p>
+                  Connect to me if you are building something cool                </p>
                 <div>
                   <a
                     href={profileData.socials.email}
