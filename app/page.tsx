@@ -339,18 +339,120 @@ export default function Home() {
           {activeSection === "projects" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Aerospace and aerodynamics research.
+                Aerospace and experimental aerodynamics research at IIT Kanpur.
               </p>
-              <div className="grid grid-cols-1 gap-4 pt-1">
+              <div className="grid grid-cols-1 gap-5 pt-1">
                 {projectsData.map((project) => (
-                  <Card
+                  <article
                     key={project.id}
-                    title={project.title}
-                    description={project.description}
-                    tags={project.tags}
-                    link={project.link}
-                    githubUrl={project.githubUrl}
-                  />
+                    className="p-5 sm:p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-4"
+                  >
+                    {/* Header */}
+                    <div className="space-y-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+                          {project.title}
+                        </h3>
+                        {"facility" in project && (
+                          <span className="text-xs font-mono text-indigo-700 dark:text-cyan-400 font-medium">
+                            {(project as { facility?: string }).facility}
+                          </span>
+                        )}
+                      </div>
+                      {"subtitle" in project && (
+                        <p className="text-xs font-mono text-neutral-600 dark:text-neutral-400">
+                          {(project as { subtitle?: string }).subtitle}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Wind Tunnel Setup Image */}
+                    {"image" in project && (project as { image?: string }).image && (
+                      <div className="space-y-1.5 pt-1">
+                        <div className="relative w-full aspect-16/10 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-neutral-950">
+                          <Image
+                            src={(project as { image?: string }).image!}
+                            alt={(project as { imageCaption?: string }).imageCaption || project.title}
+                            fill
+                            className="object-contain"
+                            priority
+                          />
+                        </div>
+                        {"imageCaption" in project && (
+                          <p className="text-xs font-mono text-neutral-600 dark:text-neutral-400 text-center">
+                            {(project as { imageCaption?: string }).imageCaption}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
+                      {project.description}
+                    </p>
+
+                    {/* Tested Shuttlecock Models */}
+                    {"shuttlecocks" in project && (project as { shuttlecocks?: string[] }).shuttlecocks && (
+                      <div className="space-y-1.5 pt-1">
+                        <span className="text-xs font-mono text-neutral-600 dark:text-neutral-400 uppercase tracking-wider">
+                          Models Tested in Wind Tunnel:
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          {(project as { shuttlecocks?: string[] }).shuttlecocks!.map((model) => (
+                            <span
+                              key={model}
+                              className="px-2.5 py-1 rounded text-xs font-mono font-medium bg-indigo-50 dark:bg-cyan-950/40 text-indigo-800 dark:text-cyan-300 border border-indigo-200/70 dark:border-cyan-800/60"
+                            >
+                              {model}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Highlights */}
+                    {"highlights" in project && (project as { highlights?: string[] }).highlights && (
+                      <ul className="list-disc list-inside space-y-1.5 text-xs text-neutral-700 dark:text-neutral-300 pt-1 leading-relaxed">
+                        {(project as { highlights?: string[] }).highlights!.map((bullet, idx) => (
+                          <li key={idx} className="pl-1">
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Links & Presentation Slides */}
+                    {"links" in project && (project as { links?: { label: string; url: string }[] }).links && (
+                      <div className="flex flex-wrap gap-2 pt-2 border-t border-neutral-100 dark:border-neutral-800/80">
+                        {(project as { links?: { label: string; url: string }[] }).links!.map((linkItem) => (
+                          <a
+                            key={linkItem.label}
+                            href={linkItem.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-mono font-medium border border-neutral-300 dark:border-neutral-700 hover:border-neutral-900 dark:hover:border-neutral-300 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white transition-colors"
+                          >
+                            <span>{linkItem.label}</span>
+                            <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Tags */}
+                    {project.tags && project.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700/60 font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </article>
                 ))}
               </div>
             </div>
