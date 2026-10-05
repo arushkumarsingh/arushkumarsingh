@@ -6,7 +6,7 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Send, Flame } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Flame } from "lucide-react";
 
 export default function Home() {
   const getCategoryIcon = (category: string) => {
@@ -222,76 +222,20 @@ export default function Home() {
 
       {/* 4. Contact Section */}
       <Section id="contact" title="contact" subtitle="Feel free to reach out for technical discussions, AI infrastructure, or aerospace research.">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-5">
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              I am open to discussions around AI infrastructure, real-time telemetry, aerospace systems, and physical computing. Drop me an email or
-              message.
-            </p>
+        <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 space-y-4">
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            I am open to discussions around AI infrastructure, real-time telemetry, aerospace systems, and physical computing.
+          </p>
 
-            <div>
-              <a
-                href={profileData.socials.email}
-                className="inline-flex items-center gap-2 text-sm font-mono text-indigo-600 dark:text-cyan-400 hover:underline"
-              >
-                <Mail className="w-4 h-4" />
-                {profileData.email}
-              </a>
-            </div>
+          <div>
+            <a
+              href={profileData.socials.email}
+              className="inline-flex items-center gap-2.5 text-base font-mono font-medium text-indigo-600 dark:text-cyan-400 hover:underline"
+            >
+              <Mail className="w-5 h-5" />
+              {profileData.email}
+            </a>
           </div>
-
-          <form
-            action="https://formspree.io/f/xvgnvqwl"
-            method="POST"
-            className="space-y-3 p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50"
-          >
-            <div>
-              <label htmlFor="name" className="block text-xs font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your Name"
-                className="w-full px-3 py-1.5 text-sm rounded border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-xs font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="your.email@example.com"
-                className="w-full px-3 py-1.5 text-sm rounded border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-xs font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={3}
-                required
-                placeholder="Write your message here..."
-                className="w-full px-3 py-1.5 text-sm rounded border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 resize-none"
-              ></textarea>
-            </div>
-
-            <Button type="submit" variant="primary" size="sm" className="w-full">
-              Send Message
-              <Send className="w-3.5 h-3.5 ml-1.5" />
-            </Button>
-          </form>
         </div>
       </Section>
     </div>
