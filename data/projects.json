@@ -4,7 +4,11 @@
     "title": "Aerodynamic Comparison of Shuttlecocks",
     "subtitle": "Experimental investigation in National Wind Tunnel Facility (NWTF), IIT Kanpur",
     "description": "Undergraduate thesis research under Prof. Sanjay Mittal comparing the aerodynamic characteristics, drag profiles, and vortex dynamics of synthetic vs natural shuttlecocks across varying rotation speeds and Reynolds numbers.",
-    "shuttlecocks": ["Mavis 350", "Mavis 2000", "Aerosensa 50"],
+    "shuttlecocks": [
+      "Mavis 350",
+      "Mavis 2000",
+      "Aerosensa 50"
+    ],
     "facility": "National Wind Tunnel Facility (NWTF), IIT Kanpur",
     "advisor": "Prof. Sanjay Mittal",
     "image": "/nwtf-shuttlecock.jpg",
@@ -15,15 +19,20 @@
         "url": "https://docs.google.com/presentation/d/1FPALI2NrSK_fbtTC5xyuDDAZwsTwslvZqvzKdykbhBk/edit?usp=sharing"
       },
       {
-        "label": "Coarse Run Wind Tunnel Experiments (YouTube Playlist)",
+        "label": "Experiment Videos(YouTube Playlist)",
         "url": "https://www.youtube.com/playlist?list=PLSJMWaeq6h27DBQWjMPfveJ-t_ZVVaLLS"
       }
     ],
     "highlights": [
       "Compared aerodynamic drag, rotation rate, and trajectory behavior across Yonex Mavis 350 (nylon), Mavis 2000 (advanced nylon), and Aerosensa 50 (feather).",
-      "Conducted closed-circuit wind tunnel testing in the National Wind Tunnel Facility (NWTF) at IIT Kanpur.",
-      "Analyzed flow field interactions, wake structure, and skirt deformation under high-speed aerodynamic loads."
+      "Conducted closed-circuit wind tunnel testing in the National Wind Tunnel Facility (NWTF) at IIT Kanpur."
     ],
-    "tags": ["Experimental Aerodynamics", "Wind Tunnel Testing", "NWTF IITK", "Fluid Dynamics", "MATLAB"]
+    "tags": [
+      "Experimental Aerodynamics",
+      "Wind Tunnel Testing",
+      "NWTF IITK",
+      "Fluid Dynamics",
+      "MATLAB"
+    ]
   }
 ]
