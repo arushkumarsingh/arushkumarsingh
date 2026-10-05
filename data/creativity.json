@@ -1,0 +1,60 @@
+[
+  {
+    "id": "humour-house-iitk",
+    "title": "Humour House — Comedy Club of IIT Kanpur",
+    "role": "Founder",
+    "description": "Founded the official comedy club of IIT Kanpur and got it formally approved under the Students' Gymkhana. Performed, trained comedians, and organized year-round campus open mics, standup workshops, and roasts.",
+    "links": [
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/humourhouseiitk/"
+      }
+    ],
+    "highlights": [
+      "Official Gymkhana Approval",
+      "Standup Workshops & Open Mics",
+      "Campus Roasts"
+    ]
+  },
+  {
+    "id": "iitk-meme-hub",
+    "title": "IITK Meme Hub & Viral Content Creation",
+    "role": "Creator & Lead",
+    "description": "Built and scaled the viral IITK Meme Hub community across Instagram and Facebook during first year of college. When a professor gave the option to submit an assignment or memes, I opened the email at 2 AM, created 20 memes in 30 minutes, submitted them, and got featured in the professor's LinkedIn post.",
+    "links": [
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/iitkmemehub/"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/iitkmemehub/"
+      },
+      {
+        "label": "LinkedIn Feature",
+        "url": "https://lnkd.in/p/ejCVqRx2"
+      }
+    ],
+    "highlights": [
+      "Built in 1st Year",
+      "Featured by Professor",
+      "High-velocity Content"
+    ]
+  },
+  {
+    "id": "viral-video",
+    "title": "Viral YouTube Video (138k+ Views)",
+    "role": "Creator",
+    "description": "Created and published a viral video that organically crossed 138,000+ views on YouTube.",
+    "links": [
+      {
+        "label": "Watch on YouTube",
+        "url": "https://youtu.be/EDcapF6JyME?si=x5BJ-awRKGTr4tON"
+      }
+    ],
+    "highlights": [
+      "138k+ Views",
+      "Organic Reach"
+    ]
+  }
+]

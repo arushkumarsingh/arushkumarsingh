@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import profileData from "@/data/profile.json";
 import projectsData from "@/data/projects.json";
+import creativityData from "@/data/creativity.json";
 import booksData from "@/data/books.json";
 import blogsData from "@/data/blogs.json";
 import { Card } from "@/components/Card";
@@ -56,6 +57,7 @@ function renderFormattedText(text?: string): React.ReactNode {
 const SECTION_BUTTONS = [
   { id: "overview", label: "overview" },
   { id: "projects", label: "projects" },
+  { id: "creativity", label: "creativity" },
   { id: "blog", label: "blog" },
   { id: "books", label: "books" },
   { id: "contact", label: "contact" },
@@ -353,7 +355,68 @@ export default function Home() {
             </div>
           )}
 
-          {/* 3. BLOG: Upcoming blogs */}
+          {/* 3. CREATIVITY: Comedy club, meme hub, viral video */}
+          {activeSection === "creativity" && (
+            <div className="space-y-4">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
+                Comedy, viral content, and creative initiatives built at IIT Kanpur.
+              </p>
+              <div className="grid grid-cols-1 gap-4 pt-1">
+                {creativityData.map((item) => (
+                  <div
+                    key={item.id}
+                    className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-3 group"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                        {item.title}
+                      </h3>
+                      {item.role && (
+                        <span className="text-xs font-mono text-indigo-700 dark:text-cyan-400 font-medium">
+                          {item.role}
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
+                      {item.description}
+                    </p>
+
+                    {item.highlights && item.highlights.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-0.5">
+                        {item.highlights.map((highlight) => (
+                          <span
+                            key={highlight}
+                            className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700/60 font-medium"
+                          >
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {item.links && item.links.length > 0 && (
+                      <div className="pt-2 flex flex-wrap items-center gap-3.5 border-t border-neutral-100 dark:border-neutral-800/80 text-xs font-mono">
+                        {item.links.map((link) => (
+                          <a
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-indigo-700 dark:text-cyan-400 hover:underline inline-flex items-center gap-1 font-medium"
+                          >
+                            {link.label} ↗
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 4. BLOG: Upcoming blogs */}
           {activeSection === "blog" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
@@ -385,7 +448,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* 4. BOOKS */}
+          {/* 5. BOOKS */}
           {activeSection === "books" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
@@ -427,7 +490,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* 5. CONTACT */}
+          {/* 6. CONTACT */}
           {activeSection === "contact" && (
             <div className="space-y-4">
               <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 space-y-4 shadow-2xs">
