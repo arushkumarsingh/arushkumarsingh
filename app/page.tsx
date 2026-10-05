@@ -110,11 +110,7 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="text-xs text-neutral-700 dark:text-neutral-300 space-y-0.5 font-mono">
-                <p className="font-semibold text-neutral-900 dark:text-neutral-100">IIT Kanpur Graduate</p>
-                <p>Aerospace & AI Infra</p>
-                <p className="text-[11px] text-neutral-600 dark:text-neutral-400">{profileData.email}</p>
-              </div>
+
 
               {/* Social Icon Bar under photo */}
               <div className="flex items-center justify-center gap-3 pt-2 border-t border-neutral-100 dark:border-neutral-800">
