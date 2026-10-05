@@ -39,7 +39,12 @@ export const metadata: Metadata = {
     creator: "@Arushkumarsing3",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/arush.jpg", type: "image/jpeg" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/arush.jpg",
+    apple: "/arush.jpg",
   },
 };
 
