@@ -7,7 +7,7 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
-import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, Flame, BookOpen, ExternalLink } from "lucide-react";
+import { ArrowDown, Code2, Server, Wrench, Cpu, BarChart3, Sparkles, Mail, BookOpen, ExternalLink } from "lucide-react";
 
 function renderFormattedText(text?: string): React.ReactNode {
   if (!text) return null;
@@ -86,15 +86,6 @@ export default function Home() {
             <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">
               {renderFormattedText(profileData.bio)}
             </p>
-
-            {/* Quote Banner */}
-            <div className="p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/60 text-xs font-mono text-neutral-800 dark:text-neutral-200 flex items-start gap-3">
-              <Flame className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="italic font-semibold">&ldquo;{profileData.motto}&rdquo;</p>
-                <p className="italic">&ldquo;{profileData.quote}&rdquo;</p>
-              </div>
-            </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Button href="#projects" variant="primary" size="sm">
