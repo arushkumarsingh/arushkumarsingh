@@ -30,8 +30,8 @@ I've worked across aerospace, space technology, AI, and hardware data systems, i
 
 ### Mindset & Core Tenets
 
-> *"Obsession beats talent."*  
-> *"If you dont find me doing crazy stuff, prolly I am dead."*
+> _"Obsession beats talent."_  
+> _"If you dont find me doing crazy stuff, prolly I am dead."_
 
 1. **Throw on me anything, and I will learn it.**
 2. **First principle thinker, who learn things just by doing it.**

@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --muted: 210 16% 96%;
+    --muted-foreground: 210 7% 46%;
+    --border: 210 14% 89%;
+    --accent: 211 100% 35%; /* al-folio academic blue #0056b3 */
+    --accent-hover: 211 100% 25%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 91%;
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 91%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 0 0% 18%;
+    --accent: 196 79% 55%; /* al-folio dark mode cyan/blue #33b5e5 */
+    --accent-hover: 196 79% 65%;
+  }
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.layout-container {
+  width: 100%;
+  max-width: 56rem; /* 896px - al-folio width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .layout-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* al-folio z-depth shadow styling */
+.z-depth-1 {
+  box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dark .z-depth-1 {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Academic typography */
+.text-h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-h2 {
+  font-size: 1.625rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.text-h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* al-folio link hover effect */
+.al-link {
+  color: hsl(var(--accent));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.al-link:hover {
+  color: hsl(var(--accent-hover));
+  text-decoration: underline;
+}

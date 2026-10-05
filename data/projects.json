@@ -1,0 +1,29 @@
+[
+  {
+    "id": "xpectraflow",
+    "title": "XpectraFlow",
+    "shortDescription": "Telemetry and data infrastructure for mission-critical hardware.",
+    "description": "XpectraFlow was built to make hardware testing and telemetry workflows faster and more reliable. I worked across the product and technical stack—from real-time ingestion and signal processing to APIs, visualization, data formats, and deployment.",
+    "tags": ["Python", "FastAPI", "PostgreSQL", "TimescaleDB", "Redis", "MinIO", "React", "AWS", "C++"],
+    "link": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "buttercut-ai",
+    "title": "ButterCut.ai",
+    "shortDescription": "AI video editing for vernacular creators.",
+    "description": "ButterCut.ai was an AI video editing product built for creators working in regional languages. I was CTO and co-founder, working across the product, engineering, and early-stage company building.",
+    "tags": ["AI", "Video", "Python", "JavaScript", "Product"],
+    "link": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "shuttlecock-aerodynamics",
+    "title": "Shuttlecock Aerodynamics Research",
+    "shortDescription": "Experimental research on the aerodynamics of rotating shuttlecocks.",
+    "description": "My undergraduate thesis at IIT Kanpur focused on the aerodynamics of rotating shuttlecocks. I worked in Prof. Sanjay Mittal's lab and at the National Wind Tunnel Facility, working with experimental aerodynamics and wind-tunnel data.",
+    "tags": ["Experimental Aerodynamics", "Wind Tunnel", "Aerospace", "MATLAB"],
+    "link": "#",
+    "githubUrl": "#"
+  }
+]

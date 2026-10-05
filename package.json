@@ -1,17 +1,32 @@
 {
+  "name": "arushkumarsingh",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "bundle exec jekyll serve",
-    "start": "bundle exec jekyll serve",
-    "lint:prettier": "prettier . --check",
-    "lint:style-contract": "node test/style_contract.js",
-    "test:visual": "playwright test --config test/visual/playwright.config.js",
-    "test:visual:update": "playwright test --config test/visual/playwright.config.js --update-snapshots"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "lucide-react": "^0.475.0",
+    "next": "15.1.7",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@shopify/prettier-plugin-liquid": "^1.10.0",
-    "pixelmatch": "^7.1.0",
-    "pngjs": "^7.0.0",
-    "prettier": "^3.8.0"
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "15.1.7",
+    "prettier": "^3.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }
