@@ -33,7 +33,7 @@ export function Nav() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
+              className="text-neutral-800 dark:text-neutral-300 hover:text-indigo-700 dark:hover:text-white transition-colors"
             >
               {item.label}
             </Link>

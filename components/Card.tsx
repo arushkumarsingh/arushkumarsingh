@@ -34,14 +34,14 @@ export function Card({ title, description, tags, link, githubUrl, role, period, 
         </div>
       </div>
 
-      {description && <p className="mt-2.5 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{description}</p>}
+      {description && <p className="mt-2.5 text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">{description}</p>}
 
       {tags && tags.length > 0 && (
         <div className="mt-3.5 flex flex-wrap gap-1.5">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/60"
+              className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300/70 dark:border-neutral-700/60 font-medium"
             >
               {tag}
             </span>
@@ -56,7 +56,7 @@ export function Card({ title, description, tags, link, githubUrl, role, period, 
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2.5 py-0.5 rounded border border-indigo-500/30 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-500/10 transition-colors"
+              className="px-2.5 py-0.5 rounded border border-indigo-600/40 text-indigo-700 dark:text-cyan-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 font-medium transition-colors"
             >
               [code]
             </a>
@@ -67,7 +67,7 @@ export function Card({ title, description, tags, link, githubUrl, role, period, 
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2.5 py-0.5 rounded border border-indigo-500/30 text-indigo-600 dark:text-cyan-400 hover:bg-indigo-500/10 transition-colors"
+              className="px-2.5 py-0.5 rounded border border-indigo-600/40 text-indigo-700 dark:text-cyan-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 font-medium transition-colors"
             >
               [link]
             </a>

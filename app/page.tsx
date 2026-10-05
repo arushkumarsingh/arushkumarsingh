@@ -41,12 +41,12 @@ export default function Home() {
               <p className="text-base font-medium text-indigo-600 dark:text-cyan-400">{profileData.tagline}</p>
             </div>
 
-            <p className="text-body text-neutral-700 dark:text-neutral-300 leading-relaxed">{profileData.intro}</p>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">{profileData.intro}</p>
 
-            <p className="text-body text-neutral-700 dark:text-neutral-300 leading-relaxed">{profileData.bio}</p>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 leading-relaxed font-normal">{profileData.bio}</p>
 
             {/* Quote Banner */}
-            <div className="p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 text-xs font-mono text-neutral-700 dark:text-neutral-300 flex items-start gap-3">
+            <div className="p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/60 text-xs font-mono text-neutral-800 dark:text-neutral-200 flex items-start gap-3">
               <Flame className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
               <div className="space-y-1">
                 <p className="italic font-semibold">&ldquo;{profileData.motto}&rdquo;</p>
@@ -77,10 +77,10 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="text-xs text-neutral-600 dark:text-neutral-400 space-y-0.5 font-mono">
-                <p className="font-semibold text-neutral-900 dark:text-neutral-200">IIT Kanpur Graduate</p>
+              <div className="text-xs text-neutral-700 dark:text-neutral-300 space-y-0.5 font-mono">
+                <p className="font-semibold text-neutral-900 dark:text-neutral-100">IIT Kanpur Graduate</p>
                 <p>Aerospace & AI Infra</p>
-                <p className="text-[11px] text-neutral-500">{profileData.email}</p>
+                <p className="text-[11px] text-neutral-600 dark:text-neutral-400">{profileData.email}</p>
               </div>
 
               {/* Social Icon Bar under photo */}
@@ -90,7 +90,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
                 >
                   <GithubIcon className="w-4 h-4" />
                 </a>
@@ -99,7 +99,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
                 >
                   <LinkedinIcon className="w-4 h-4" />
                 </a>
@@ -108,14 +108,14 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X / Twitter"
-                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
                 >
                   <TwitterIcon className="w-4 h-4" />
                 </a>
                 <a
                   href={profileData.socials.email}
                   aria-label="Email"
-                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -131,10 +131,10 @@ export default function Home() {
             {profileData.taglines.map((item, idx) => (
               <div
                 key={idx}
-                className="p-3 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/50 flex items-start gap-2.5"
+                className="p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/60 dark:bg-neutral-900/50 flex items-start gap-2.5"
               >
-                <span className="font-mono text-xs font-bold text-indigo-600 dark:text-cyan-400 shrink-0">0{idx + 1}.</span>
-                <p className="text-neutral-800 dark:text-neutral-200 leading-snug">{item}</p>
+                <span className="font-mono text-xs font-bold text-indigo-700 dark:text-cyan-400 shrink-0">0{idx + 1}.</span>
+                <p className="text-neutral-900 dark:text-neutral-100 font-medium leading-snug">{item}</p>
               </div>
             ))}
           </div>
@@ -147,7 +147,7 @@ export default function Home() {
             {Object.entries(profileData.skills).map(([category, items]) => (
               <div
                 key={category}
-                className="p-3.5 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/50 space-y-2.5"
+                className="p-3.5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/60 dark:bg-neutral-900/50 space-y-2.5"
               >
                 <div className="flex items-center gap-2 font-semibold text-xs text-neutral-900 dark:text-neutral-100">
                   {getCategoryIcon(category)}
@@ -157,7 +157,7 @@ export default function Home() {
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-200/60 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200"
+                      className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium"
                     >
                       {skill}
                     </span>
@@ -187,29 +187,29 @@ export default function Home() {
 
       {/* 3. Experience Timeline */}
       <Section id="experience" title="timeline & journey" subtitle="Career trajectory across aerospace, AI, and engineering">
-        <div className="relative pl-5 border-l-2 border-neutral-200 dark:border-neutral-800 space-y-8">
+        <div className="relative pl-5 border-l-2 border-neutral-300 dark:border-neutral-800 space-y-8">
           {experienceData.map((exp) => (
             <div key={exp.id} className="relative group">
               {/* Node */}
-              <div className="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-neutral-950 bg-indigo-600 dark:bg-cyan-400 transition-transform group-hover:scale-125" />
+              <div className="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-neutral-950 bg-indigo-700 dark:bg-cyan-400 transition-transform group-hover:scale-125" />
 
               <div className="space-y-1.5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <h3 className="text-h3 text-neutral-900 dark:text-neutral-100 font-semibold">
-                    {exp.role} <span className="text-indigo-600 dark:text-cyan-400 font-normal">@ {exp.company}</span>
+                    {exp.role} <span className="text-indigo-700 dark:text-cyan-400 font-medium">@ {exp.company}</span>
                   </h3>
-                  <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono text-neutral-700 dark:text-neutral-300 bg-neutral-200/80 dark:bg-neutral-900 px-2 py-0.5 rounded font-medium">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{exp.description}</p>
+                <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">{exp.description}</p>
 
                 <div className="flex flex-wrap gap-1 pt-1">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
+                      className="px-2 py-0.5 rounded text-xs font-mono bg-neutral-200/80 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-300/60 dark:border-neutral-700/60 font-medium"
                     >
                       {tech}
                     </span>
@@ -227,21 +227,21 @@ export default function Home() {
           {booksData.map((book) => (
             <div
               key={book.id}
-              className="p-5 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 shadow-sm hover:shadow-md transition-all space-y-2.5 group"
+              className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 shadow-sm hover:shadow-md transition-all space-y-2.5 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-indigo-600 dark:text-cyan-400 shrink-0" />
-                  <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors">
+                  <BookOpen className="w-4 h-4 text-indigo-700 dark:text-cyan-400 shrink-0" />
+                  <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-indigo-700 dark:group-hover:text-cyan-400 transition-colors">
                     {book.title}
                   </h3>
                 </div>
-                <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400">
+                <span className="text-xs font-mono text-neutral-700 dark:text-neutral-400 font-medium">
                   by {book.author}
                 </span>
               </div>
 
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
                 {book.description}
               </p>
 
@@ -250,7 +250,7 @@ export default function Home() {
                   href={book.goodreadsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-indigo-600 dark:text-cyan-400 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-indigo-700 dark:text-cyan-400 hover:underline"
                 >
                   [Goodreads]
                   <ExternalLink className="w-3 h-3" />
@@ -263,15 +263,15 @@ export default function Home() {
 
       {/* 5. Contact Section */}
       <Section id="contact" title="contact" subtitle="Feel free to reach out for technical discussions, AI infrastructure, or aerospace research.">
-        <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 space-y-4">
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+        <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/60 dark:bg-neutral-900/50 space-y-4">
+          <p className="text-sm text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
             I am open to discussions around AI infrastructure, real-time telemetry, aerospace systems, and physical computing.
           </p>
 
           <div>
             <a
               href={profileData.socials.email}
-              className="inline-flex items-center gap-2.5 text-base font-mono font-medium text-indigo-600 dark:text-cyan-400 hover:underline"
+              className="inline-flex items-center gap-2.5 text-base font-mono font-medium text-indigo-700 dark:text-cyan-400 hover:underline"
             >
               <Mail className="w-5 h-5" />
               {profileData.email}
