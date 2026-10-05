@@ -307,6 +307,16 @@ export default function Home() {
                       {exp.description}
                     </p>
 
+                    {"highlights" in exp && (exp as { highlights?: string[] }).highlights && (exp as { highlights?: string[] }).highlights!.length > 0 && (
+                      <ul className="list-disc list-inside space-y-1 text-xs text-neutral-700 dark:text-neutral-300 pt-1 leading-relaxed">
+                        {(exp as { highlights?: string[] }).highlights!.map((bullet, idx) => (
+                          <li key={idx} className="pl-1">
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     {exp.technologies && exp.technologies.length > 0 && (
                       <div className="flex flex-wrap gap-1 pt-1">
                         {exp.technologies.map((tech) => (
@@ -325,11 +335,11 @@ export default function Home() {
             </div>
           )}
 
-          {/* 2. PROJECTS */}
+          {/* 3. PROJECTS */}
           {activeSection === "projects" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Selected hardware telemetry, AI products, and aerospace research.
+                Aerospace and aerodynamics research.
               </p>
               <div className="grid grid-cols-1 gap-4 pt-1">
                 {projectsData.map((project) => (

@@ -1,30 +1,67 @@
 [
   {
-    "id": "exp-xpectraflow",
-    "role": "Founder / CTO",
-    "company": "XpectraFlow",
-    "description": "Built telemetry and data infrastructure for aerospace and other mission-critical hardware. Worked across product, software architecture, real-time data ingestion, signal processing, visualization, and customer development.",
-    "technologies": ["Python", "FastAPI", "PostgreSQL", "TimescaleDB", "Redis", "C++"]
+    "id": "exp-xpectra",
+    "role": "Founder",
+    "company": "Xpectra",
+    "period": "Mar'26 - Present",
+    "description": "Founded and built Xpectra, a telemetry data infrastructure platform for high-rate aerospace sensor data. Took the product from 0 to 1, with deployments across Dream Aerospace and Nabhdrishti Aerospace.",
+    "highlights": [
+      "Designed PostgreSQL + TimescaleDB storage with hypertables, indexing, and optimized time-window queries.",
+      "Built a rule-based anomaly engine for thresholds, outliers, flatlining, missing data, and trend detection.",
+      "Implemented real-time streaming for 20 kHz sensor data and CCSDS telemetry with live validation.",
+      "Built a low-latency visualization layer for multi-channel overlays, test comparison, and hardware root-cause analysis.",
+      "Architected a hardware-agnostic data layer supporting heterogeneous formats across evolving hardware configurations.",
+      "Built Parquet + S3 archival pipelines for scalable storage of raw and processed telemetry."
+    ],
+    "technologies": ["TimescaleDB", "PostgreSQL", "Python", "CCSDS Telemetry", "S3", "Parquet", "Real-Time Streaming"]
   },
   {
     "id": "exp-buttercut",
-    "role": "CTO / Co-founder",
-    "company": "ButterCut.ai",
-    "description": "Built an AI video editing product for vernacular creators, working across engineering, product, and early-stage company building.",
-    "technologies": ["AI", "Video", "Python", "JavaScript", "Product"]
+    "role": "Co-Founder and CTO",
+    "company": "ButterCutAI",
+    "period": "Sep'25 - Mar'26",
+    "description": "Shipped 3 consumer features and 1 enterprise feature within 3 months, supporting 500+ DAU and 15k+ signups. Took the product from zero to MVP, owning architecture, infrastructure, LLM agents, and core rendering logic.",
+    "highlights": [
+      "Built the end-to-end backend for an AI-driven video editing platform using Python, Node.js, and AWS.",
+      "Designed Lambda & SQS based orchestration for async rendering jobs, including retries, failure handling, and status tracking.",
+      "Built LLM agent workflows to orchestrate script parsing, scene planning, and asset selection across text, image, and video generation with FFmpeg for render-ready timelines.",
+      "Integrated LiteLLM for model routing and cost control, and Langfuse for prompt versioning and agent observability.",
+      "Integrated ElevenLabs for neural voice synthesis and built audio-video alignment logic for dubbing workflows."
+    ],
+    "technologies": ["Python", "Node.js", "AWS", "FFmpeg", "LLM Agents", "LiteLLM", "Langfuse", "ElevenLabs"]
   },
   {
     "id": "exp-galaxeye",
-    "role": "Aerospace & Space Tech",
+    "role": "Algorithms Developer",
     "company": "GalaxEye Space",
-    "description": "Worked on aerospace and space technology before building XpectraFlow.",
-    "technologies": ["Aerospace", "Space Tech"]
+    "period": "Oct'24 - Aug'25",
+    "description": "Engineered space algorithms, satellite telemetry packet decoders, multithreaded sensor fusion architectures, and SAR processing pipelines.",
+    "highlights": [
+      "Developed a binary decoder for satellite packets implementing BAQ, FDBAQ, and dequantization algorithms.",
+      "Parallelised the satellite packets decoder through multiprocessing, decreasing processing time by 85%.",
+      "Architected a multithreaded framework for real-time sensor fusion processing using moodycamel circular buffers in C++.",
+      "Enhanced CUDA kernels, significantly accelerating pixel-level computational algorithms through effective parallelization.",
+      "Designed and implemented an algorithm for INS-based coordinate correction to enhance the quality of SAR images.",
+      "Refactored the Python SAR processor into a library, providing a high-level API for modular computations.",
+      "Developed the Range-Doppler algorithm for satellite SAR data and validated it using Sentinel open-source data.",
+      "Developed Docker Compose setup and automated CI/CD pipeline to build and push processor Docker images to AWS ECR."
+    ],
+    "technologies": ["C++", "CUDA", "Python", "Multiprocessing", "SAR Processing", "Docker", "AWS ECR", "CI/CD"]
   },
   {
     "id": "exp-nabhdrishti",
-    "role": "Aerospace Engineering",
-    "company": "NabhDrishti Aerospace",
-    "description": "Worked on aerospace technology and engineering.",
-    "technologies": ["Aerospace Engineering"]
+    "role": "Founding Engineer",
+    "company": "Nabhdrishti Aerospace",
+    "period": "Feb'24 - Sep'24",
+    "description": "Engineered gas turbine thermodynamic performance cycles, data acquisition systems, spray particle image processing, and cloud compute automation.",
+    "highlights": [
+      "Designed plug-and-play Python code with modular components to build a performance cycle for any gas turbine engine.",
+      "Built a solver selection framework enabling modular integration of thermodynamic cycles and loss models.",
+      "Improved loss calculations in off-design cases by incorporating new off-design loss coefficient equations.",
+      "Built Data Acquisition Python code to acquire data of pressure sensors, air, and liquid mass flow controllers in parallel.",
+      "Developed multiprocessing Python code with OpenCV to process 1,000+ TIFF images to measure spray particle size.",
+      "Deployed Ansys on AWS EC2 high-core machines with AWS Lambda automation for instance spin-up, spot interruption handling, and S3 backup."
+    ],
+    "technologies": ["Python", "Thermodynamic Cycles", "OpenCV", "Data Acquisition", "Ansys", "AWS EC2", "AWS Lambda", "S3"]
   }
 ]
