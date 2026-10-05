@@ -1,0 +1,42 @@
+cv:
+  name: Arush Kumar Singh
+  label: Aerospace Engineer
+  email: arush17kvbasti.2014@gmail.com
+  location: India
+
+  social_networks:
+    - network: X
+      username: Arushkumarsing3
+    - network: GitHub
+      username: arushkumarsingh
+    - network: LinkedIn
+      username: arush-kumar-singh
+
+  sections:
+    Education:
+      - institution: Indian Institute of Technology (IIT) Kanpur
+        location: Kanpur, India
+        area: Aerospace Engineering
+        studyType: Bachelor of Technology (B.Tech)
+        summary: Undergraduate thesis research focused on the aerodynamics of rotating shuttlecocks at the National Wind Tunnel Facility and Prof. Sanjay Mittal's lab.
+
+    Experience:
+      - company: XpectraFlow
+        position: Founder / CTO
+        start_date: "[DATES TBD]"
+        summary: Built telemetry and data infrastructure for aerospace and other mission-critical hardware. Worked across product, software architecture, real-time data ingestion, signal processing, visualization, and customer development.
+
+      - company: ButterCut.ai
+        position: CTO / Co-founder
+        start_date: "[DATES TBD]"
+        summary: Built an AI video editing product for vernacular creators, working across engineering, product, and early-stage company building.
+
+      - company: GalaxEye Space
+        position: "[TITLE TBD]"
+        start_date: "[DATES TBD]"
+        summary: Worked on aerospace/space technology before building XpectraFlow.
+
+      - company: NabhDrishti Aerospace
+        position: "[TITLE TBD]"
+        start_date: "[DATES TBD]"
+        summary: Worked on aerospace technology and engineering.
