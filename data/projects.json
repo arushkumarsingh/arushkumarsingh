@@ -34,5 +34,32 @@
       "Fluid Dynamics",
       "MATLAB"
     ]
+  },
+  {
+    "id": "drone-hologram-3d-show",
+    "title": "3D Aerial Holographic Light Show with Drones",
+    "subtitle": "Multi-hologram array integration for volumetric aerial displays",
+    "description": "Conventional drone light shows rely on single-point LED emitters per drone to create sparse constellation shapes. This project explored creating high-resolution 3D volumetric images directly in the sky by combining spinning POV (persistence-of-vision) holographic fan units into an array and mounting them onto drone airframes, validating ground stability, image sync, and flight feasibility.",
+    "facility": "Hardware Prototyping & Flight Testing",
+    "image": "/hologram-drone.jpg",
+    "imageCaption": "Ground testing and sync validation of the multi-hologram display module before aerial integration",
+    "links": [
+      {
+        "label": "Ground Testing Video (YouTube)",
+        "url": "https://youtu.be/rDeNtq4MXMg"
+      }
+    ],
+    "highlights": [
+      "Combined persistence-of-vision (POV) hologram units into a synchronized array to project unified 3D imagery instead of single-point LEDs.",
+      "Engineered structural mounting and payload balancing for multi-rotor drone airframes.",
+      "Conducted bench and ground test runs validating image formation, motor RPM stability, and aerial feasibility."
+    ],
+    "tags": [
+      "Drone Systems",
+      "Volumetric Display",
+      "Holograms",
+      "Hardware Prototyping",
+      "Aerial Robotics"
+    ]
   }
 ]

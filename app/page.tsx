@@ -351,7 +351,7 @@ export default function Home() {
           {activeSection === "projects" && (
             <div className="space-y-4">
               <p className="text-sm text-neutral-600 dark:text-neutral-400 font-normal">
-                Aerospace and experimental aerodynamics research at IIT Kanpur.
+                Aerospace engineering, experimental aerodynamics, and robotics systems.
               </p>
               <div className="grid grid-cols-1 gap-5 pt-1">
                 {projectsData.map((project) => (
