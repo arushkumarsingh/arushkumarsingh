@@ -40,7 +40,6 @@
     "title": "3D Aerial Holographic Light Show with Drones",
     "subtitle": "Multi-hologram array integration for volumetric aerial displays",
     "description": "Conventional drone light shows rely on single-point LED emitters per drone to create sparse constellation shapes. This project explored creating high-resolution 3D volumetric images directly in the sky by combining spinning POV (persistence-of-vision) holographic fan units into an array and mounting them onto drone airframes, validating ground stability, image sync, and flight feasibility.",
-    "facility": "Hardware Prototyping & Flight Testing",
     "image": "/hologram-drone.jpg",
     "imageCaption": "Ground testing and sync validation of the multi-hologram display module before aerial integration",
     "links": [

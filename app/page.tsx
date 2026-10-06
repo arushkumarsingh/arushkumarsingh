@@ -8,8 +8,7 @@ import creativityData from "@/data/creativity.json";
 import booksData from "@/data/books.json";
 import blogsData from "@/data/blogs.json";
 import experienceData from "@/data/experience.json";
-import { Card } from "@/components/Card";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink, Link2, Check } from "lucide-react";
 
 // Markdown link parser for intro & paragraphs
 function renderFormattedText(text?: string): React.ReactNode {
@@ -60,14 +59,52 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const sectionContentRef = useRef<HTMLDivElement>(null);
 
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
   // Sync with URL hash and custom open-section events
   useEffect(() => {
     const handleHash = () => {
-      const hash = window.location.hash.replace("#", "");
-      if (SECTION_BUTTONS.some((b) => b.id === hash)) {
-        setActiveSection(hash);
-      } else if (!hash) {
+      const rawHash = window.location.hash.replace(/^#/, "");
+      if (!rawHash) {
         setActiveSection(null);
+        return;
+      }
+
+      // Check format: section/item or section#item or section
+      let targetSection = rawHash;
+      let targetItem: string | null = null;
+
+      if (rawHash.includes("/")) {
+        const parts = rawHash.split("/");
+        targetSection = parts[0];
+        targetItem = parts.slice(1).join("/");
+      } else if (rawHash.includes("#")) {
+        const parts = rawHash.split("#");
+        targetSection = parts[0];
+        targetItem = parts.slice(1).join("#");
+      }
+
+      if (SECTION_BUTTONS.some((b) => b.id === targetSection)) {
+        setActiveSection(targetSection);
+
+        // If an item was specified (e.g. projects/shuttlecock or experience/exp-xpectra)
+        if (targetItem) {
+          setTimeout(() => {
+            const el = document.getElementById(targetItem!) || 
+                       document.getElementById(`item-${targetItem}`) ||
+                       document.getElementById(`exp-${targetItem}`) ||
+                       document.getElementById(`${targetItem}-aerodynamics`);
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "center" });
+            } else {
+              sectionContentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 150);
+        } else {
+          setTimeout(() => {
+            sectionContentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 100);
+        }
       }
     };
 
@@ -107,6 +144,17 @@ export default function Home() {
         sectionContentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 100);
     }
+  };
+
+  const copyItemLink = (section: string, itemId: string) => {
+    const origin = window.location.origin;
+    const url = `${origin}/#${section}/${itemId}`;
+    history.pushState(null, "", `#${section}/${itemId}`);
+    navigator.clipboard.writeText(url);
+    setCopiedId(itemId);
+    setTimeout(() => {
+      setCopiedId((prev) => (prev === itemId ? null : prev));
+    }, 2000);
   };
 
   const closeActiveSection = () => {
@@ -287,27 +335,47 @@ export default function Home() {
                 {experienceData.map((exp) => (
                   <div
                     key={exp.id}
-                    className="p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-2.5"
+                    id={exp.id}
+                    className="group relative p-5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-2.5 scroll-mt-24 transition-colors hover:border-neutral-300 dark:hover:border-neutral-700"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-                        {exp.role}{" "}
-                        {"url" in exp && (exp as { url?: string }).url ? (
-                          <a
-                            href={(exp as { url?: string }).url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-indigo-700 dark:text-cyan-400 font-medium underline underline-offset-4 decoration-indigo-300 dark:decoration-cyan-700 hover:decoration-indigo-700 dark:hover:decoration-cyan-300 transition-colors inline-flex items-center gap-0.5"
-                          >
-                            <span>@ {exp.company}</span>
-                            <span className="text-[10px] font-mono">↗</span>
-                          </a>
-                        ) : (
-                          <span className="text-indigo-700 dark:text-cyan-400 font-medium">
-                            @ {exp.company}
-                          </span>
-                        )}
-                      </h3>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                          {exp.role}{" "}
+                          {"url" in exp && (exp as { url?: string }).url ? (
+                            <a
+                              href={(exp as { url?: string }).url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-indigo-700 dark:text-cyan-400 font-medium underline underline-offset-4 decoration-indigo-300 dark:decoration-cyan-700 hover:decoration-indigo-700 dark:hover:decoration-cyan-300 transition-colors inline-flex items-center gap-0.5"
+                            >
+                              <span>@ {exp.company}</span>
+                              <span className="text-[10px] font-mono">↗</span>
+                            </a>
+                          ) : (
+                            <span className="text-indigo-700 dark:text-cyan-400 font-medium">
+                              @ {exp.company}
+                            </span>
+                          )}
+                        </h3>
+                        <button
+                          onClick={() => copyItemLink("experience", exp.id)}
+                          title="Copy sharable direct link"
+                          className="opacity-70 sm:opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 cursor-pointer inline-flex items-center gap-1 text-[11px] font-mono"
+                        >
+                          {copiedId === exp.id ? (
+                            <>
+                              <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                              <span className="text-emerald-600 dark:text-emerald-400">copied</span>
+                            </>
+                          ) : (
+                            <>
+                              <Link2 className="w-3.5 h-3.5" />
+                              <span className="hidden sm:inline">link</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
                       {"period" in exp && (exp as { period?: string }).period && (
                         <span className="text-xs font-mono text-neutral-600 dark:text-neutral-400">
                           {(exp as { period?: string }).period}
@@ -357,14 +425,34 @@ export default function Home() {
                 {projectsData.map((project) => (
                   <article
                     key={project.id}
-                    className="p-5 sm:p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-4"
+                    id={project.id}
+                    className="group relative p-5 sm:p-6 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/70 shadow-2xs space-y-4 scroll-mt-24 transition-colors hover:border-neutral-300 dark:hover:border-neutral-700"
                   >
                     {/* Header */}
                     <div className="space-y-1">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                          {project.title}
-                        </h3>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+                            {project.title}
+                          </h3>
+                          <button
+                            onClick={() => copyItemLink("projects", project.id)}
+                            title="Copy sharable direct link"
+                            className="opacity-70 sm:opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 cursor-pointer inline-flex items-center gap-1 text-[11px] font-mono"
+                          >
+                            {copiedId === project.id ? (
+                              <>
+                                <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                                <span className="text-emerald-600 dark:text-emerald-400">copied</span>
+                              </>
+                            ) : (
+                              <>
+                                <Link2 className="w-3.5 h-3.5" />
+                                <span className="hidden sm:inline">link</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
                         {"facility" in project && (
                           <span className="text-xs font-mono text-indigo-700 dark:text-cyan-400 font-medium">
                             {(project as { facility?: string }).facility}
